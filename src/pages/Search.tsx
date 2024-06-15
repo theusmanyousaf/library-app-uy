@@ -1,3 +1,5 @@
+import SearchResults from "../components/searchResults/searchResults"
+
 
 export default function Search() {
     return (
@@ -12,6 +14,7 @@ export default function Search() {
                     />
                 </div>
             </div>
+            <SearchResults />
         </>
     )
 }

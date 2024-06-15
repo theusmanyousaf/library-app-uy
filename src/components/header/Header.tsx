@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Logo from '../../assets/Logo.svg'
 
 export default function Header() {
