@@ -2,12 +2,14 @@
 export default function Search() {
     return (
         <>
-            <div className='grid my-20 justify-center'>
-                <div>
-                    <h1 className="font-bold text-4xl mt-12">Search Books</h1>
-                </div>
-                <div className='mt-12'>
-                    <input className="border-gray-100 rounded py-4 pl-4 pr-52" placeholder="Search query" name="searchbar" />
+            <div className="flex flex-col items-center py-10 m-20">
+                <h1 className="text-4xl font-semibold mb-12">Search Books</h1>
+                <div className="w-full max-w-2xl">
+                    <input
+                        type="text"
+                        placeholder="Search query"
+                        className="w-full p-4 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-200"
+                    />
                 </div>
             </div>
         </>
