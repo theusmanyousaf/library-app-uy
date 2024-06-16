@@ -6,7 +6,7 @@ export default function Header() {
     const [pagesOpen, setPagesOpen] = useState(false);
   
     return (
-        <header className="bg-white shadow">
+        <header>
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <a href="/"><img src={Logo} alt='logo'/></a>
           <nav className="flex items-center space-x-8 ml-auto">

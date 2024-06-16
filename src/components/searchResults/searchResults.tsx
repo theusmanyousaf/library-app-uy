@@ -16,7 +16,7 @@ const SearchResults = () => {
   
     return (
       <div className="py-10">
-        <h2 className="text-3xl font-semibold text-center mb-6">Search Results</h2>
+        <h2 className="text-3xl font-semibold text-left mb-6">Search Results</h2>
         <div className="grid grid-cols-3 gap-6">
           {results.map((result, index) => (
             <SearchResultCard
@@ -29,7 +29,7 @@ const SearchResults = () => {
           ))}
         </div>
         <div className="flex justify-center mt-6">
-          <button className="bg-gray-200 text-gray-700 py-2 px-6 rounded-lg hover:bg-gray-300">More</button>
+          <button className="bg-blue-100 text-blue-700 py-6 px-44 font-bold rounded-lg hover:bg-blue-400 hover:text-gray-50 mb-8">MORE</button>
         </div>
       </div>
     );
