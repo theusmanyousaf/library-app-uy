@@ -34,7 +34,7 @@ const RelatedBooks = () => {
     };
 
     return (
-        <div className="bg-blue-950 py-8">
+        <div className="bg-blue-950 py-8 my-16">
             <div className="relative">
             <h2 className="text-white text-left pl-28 mb-8 text-2xl">Related Books</h2>
                 <div className="hidden md:flex absolute top-0 right-0 mt-2 mr-2">
