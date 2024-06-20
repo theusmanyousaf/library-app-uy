@@ -6,3 +6,7 @@
 body {
   margin: 0 6.578%;
 }
+
+#no-margin {
+  margin-left: 0;
+}

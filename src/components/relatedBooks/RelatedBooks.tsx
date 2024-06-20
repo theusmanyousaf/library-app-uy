@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { VscArrowCircleRight, VscArrowCircleLeft } from "react-icons/vsc";
+import '../../styles/index.css'
 
 const RelatedBooks = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -34,23 +35,25 @@ const RelatedBooks = () => {
     };
 
     return (
-        <div className="bg-blue-950 py-8 my-16">
-            <div className="relative">
-            <h2 className="text-white text-left pl-28 mb-8 text-2xl">Related Books</h2>
-                <div className="hidden md:flex absolute top-0 right-0 mt-2 mr-2">
+        <div className="bg-blue-950 py-8 my-16" id='no-margin'>
+            <div className="relative mb-12">
+                <div className='absolute top-0 left-0 ml-4'>
+                    <h2 className="text-white text-left pl-28 mb-8 text-2xl">Related Books</h2>
+                </div>
+                <div className="hidden md:flex absolute right-12 mr-4">
                     <button
                         onClick={prevBooks}
                         disabled={currentIndex === 0}
                         className="text-white p-2 disabled:opacity-50"
                     >
-                        <VscArrowCircleLeft size={'2rem'}/>
+                        <VscArrowCircleLeft size={'2rem'} />
                     </button>
                     <button
                         onClick={nextBooks}
                         disabled={currentIndex + 5 >= books.length}
                         className="text-white p-2 disabled:opacity-50"
                     >
-                        <VscArrowCircleRight size={'2rem'}/>
+                        <VscArrowCircleRight size={'2rem'} />
                     </button>
                 </div>
             </div>
@@ -71,7 +74,7 @@ const RelatedBooks = () => {
                         disabled={currentIndex === 0}
                         className="text-white p-2 disabled:opacity-50"
                     >
-                        <VscArrowCircleLeft size={'2rem'}/>
+                        <VscArrowCircleLeft size={'2rem'} />
                     </button>
                     <button
                         onClick={nextBooks}
