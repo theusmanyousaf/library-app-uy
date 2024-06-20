@@ -2,6 +2,7 @@ import SearchResultCard from "../components/searchResultCard/SearchResultCard"
 import BestThisMonth from "../components/bestThisMonth/BestThisMonth";
 import bookImage from '../assets/Books-1.png'
 import Category from "../components/catogory/Category";
+import Contact from "../components/contact/Contact";
 
 function Home() {
   const results = [
@@ -15,7 +16,7 @@ function Home() {
 
   return (
     <>
-      <div className="grid grid-cols-3 gap-6 my-10">
+      <div className="grid grid-cols-3 gap-6 my-16">
         <div className="col-span-2">
           <h2 className="text-3xl font-semibold text-left mb-6">Recomended Books</h2>
           <div className="grid grid-cols-2 gap-4">
@@ -39,6 +40,7 @@ function Home() {
         </div>
       </div>
       <Category />
+      <Contact />
     </>
   );
 }
