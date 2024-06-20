@@ -4,7 +4,7 @@ import Heart from '../../assets/Heart.svg'
 const Footer = () => {
   return (
     <footer className="py-8">
-      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
+      <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
         <div>
           <a href="/"><img className='mb-6' src={Logo} alt='logo' /></a>
           <p>Build a modern and creative website with crealand</p>

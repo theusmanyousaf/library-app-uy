@@ -7,7 +7,7 @@ export default function Header() {
   
     return (
         <header>
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div className="mx-auto px-4 py-4 flex justify-between items-center">
           <a href="/"><img src={Logo} alt='logo'/></a>
           <nav className="flex items-center space-x-8 ml-auto">
             <a href="/" className="text-gray-700 hover:text-blue-500">Home</a>
