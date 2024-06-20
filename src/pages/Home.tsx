@@ -1,6 +1,7 @@
 import SearchResultCard from "../components/searchResultCard/SearchResultCard"
 import BestThisMonth from "../components/bestThisMonth/BestThisMonth";
 import bookImage from '../assets/Books-1.png'
+import Category from "../components/catogory/Category";
 
 function Home() {
   const results = [
@@ -37,6 +38,7 @@ function Home() {
           <BestThisMonth />
         </div>
       </div>
+      <Category />
     </>
   );
 }

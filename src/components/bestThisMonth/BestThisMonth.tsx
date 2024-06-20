@@ -25,7 +25,7 @@ export default function BestThisMonth() {
                 />
             ))}
             <div className='grid justify-center'>
-                <button className="text-blue-700 rounded-b-lg font-bold mb-4">SEE BEST BOOKS</button>
+                <button className="text-blue-700 hover:text-black rounded-b-lg font-bold mb-4">SEE BEST BOOKS</button>
             </div>
         </div>
     )
