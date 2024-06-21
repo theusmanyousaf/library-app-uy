@@ -7,7 +7,7 @@ const Footer = () => {
       <div className='flex md:flex-row flex-col-reverse'>
         <div className='md:w-[263px] pr-10 flex md:flex-none md:justify-normal md:items-start flex-col justify-center items-center'>
           <a href="/"><img className='mb-6' src={Logo} alt='logo' /></a>
-          <p className='text-center md:text-left'>Build a modern and creative website with crealand</p>
+          <p className='text-center md:text-left text-gray-400'>Build a modern and creative website with crealand</p>
           <div className="flex space-x-4 mt-4">
             <div className="bg-red-500 h-8 w-8 rounded-full"></div>
             <div className="bg-red-500 h-8 w-8 rounded-full"></div>

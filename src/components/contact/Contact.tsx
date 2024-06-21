@@ -2,26 +2,22 @@ import { FaEnvelope } from 'react-icons/fa';
 
 const Contact = () => {
     return (
-        <div className="bg-gradient-to-l from-blue-600 to-blue-900 px-12 py-12 my-20 rounded-lg">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col lg:flex-row items-center justify-between">
-                    <h2 className="text-3xl font-semibold text-white mb-6 lg:mb-0 lg:mr-6">
-                        Be the First to know <br /> Our Promo before others!
-                    </h2>
-                    <div className="flex w-full lg:w-auto bg-white p-1 rounded-lg">
-                        <div className="flex items-center  rounded-l-md pl-4">
-                            <FaEnvelope className="text-gray-500" />
-                            <input
-                                type="email"
-                                placeholder="Your Email"
-                                className="ml-2 w-full lg:w-auto focus:outline-none"
-                            />
-                        </div>
-                        <button className="bg-yellow-500 text-white px-4 py-2 rounded-r-md hover:bg-yellow-600 transition-colors">
-                            Register Now
-                        </button>
-                    </div>
+        <div className="md:flex md:justify-between md:items-center bg-gradient-to-l from-blue-600 to-blue-900 pl-6 pr-4 md:px-[60px] py-[70px] my-20 md:rounded-lg max-w-[1140px]">
+            <div className='md:flex-none md:max-w-[423px]'>
+                <h2 className="md:text-3xl text-2xl font-semibold text-white pt-1 md:mb-5 mb-3">
+                    Be the First to know <br /> Our Promo before others!
+                </h2>
+            </div>
+            <div className="flex flex-col justify-between md:flex-row md:w-[447px] md:mr-[3px] md:h-14 bg-white p-1 rounded-lg">
+                <div className="flex items-center md:rounded-l-md pl-2 md:h-auto h-12">
+                    <FaEnvelope size={20} className="text-black min-w-5" />
+                    <input
+                        type="email"
+                        placeholder="Your Email"
+                        className="ml-2 md:w-full focus:outline-none overflow-hidden"
+                    />
                 </div>
+                <button className="bg-yellow-500 text-white md:right-0 md:px-4 py-2 md:rounded-r-md rounded-md hover:bg-yellow-600 transition-colors">Register Now</button>
             </div>
         </div>
     );
