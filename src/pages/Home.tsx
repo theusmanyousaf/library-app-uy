@@ -28,7 +28,7 @@ function Home() {
 
   return (
     <>
-      <div className="md:flex md:justify-between my-16 md:max-h-[1012px] md:max-w-[1140px]">
+      <div className="md:flex md:justify-between mb-20 mt-12 md:max-h-[1012px] md:max-w-[1140px]">
         <div className="md:col-span-2">
           <h2 className="text-3xl font-semibold text-left mb-6">Recomended Books</h2>
           <div className="md:grid md:grid-cols-2 md:gap-8">

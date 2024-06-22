@@ -3,7 +3,7 @@ import Heart from '../../assets/Heart.svg'
 
 const Footer = () => {
   return (
-    <footer className="md:py-8">
+    <footer className="py-8">
       <div className='flex md:flex-row flex-col-reverse md:gap-10'>
         <div className='md:w-[263px] pr-10 flex md:flex-none md:justify-normal md:items-start flex-col justify-center items-center mb-4'>
           <a href="/"><img className='mb-6' src={Logo} alt='logo' /></a>
@@ -55,11 +55,11 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="md:grid md:justify-center md:text-center md:mt-8 hidden">
-        <div className='flex mb-4 justify-center rounded'>
+      <div className="md:grid md:justify-center md:text-center md:my-20 hidden">
+        <div className='flex my-4 justify-center rounded'>
           <img src={Heart} alt='Heart' />
         </div>
-        <div className="mb-4">Copyright © 2024. Crafted with love.</div>
+        <div>Copyright © 2024. Crafted with love.</div>
       </div>
     </footer>
   );

@@ -7,7 +7,7 @@ type searchResultsType = {
 
 const BestThisMonthCard = ({ title, category, price, image }: searchResultsType) => {
     return (
-        <div className="flex m-[21px]">
+        <div className="flex m-5">
             <img className="object-cover min-w-[120px] rounded-md mr-3" src={image} alt="Book" />
             <div className="flex flex-col ml-3">
                 <h2 className="text-lg font-semibold mb-5">{title}</h2>
