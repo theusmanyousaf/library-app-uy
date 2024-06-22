@@ -4,8 +4,8 @@ import Heart from '../../assets/Heart.svg'
 const Footer = () => {
   return (
     <footer className="md:py-8">
-      <div className='flex md:flex-row flex-col-reverse'>
-        <div className='md:w-[263px] pr-10 flex md:flex-none md:justify-normal md:items-start flex-col justify-center items-center'>
+      <div className='flex md:flex-row flex-col-reverse md:gap-10'>
+        <div className='md:w-[263px] pr-10 flex md:flex-none md:justify-normal md:items-start flex-col justify-center items-center mb-4'>
           <a href="/"><img className='mb-6' src={Logo} alt='logo' /></a>
           <p className='text-center md:text-left text-gray-400'>Build a modern and creative website with crealand</p>
           <div className="flex space-x-4 mt-4">

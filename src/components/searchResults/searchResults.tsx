@@ -3,15 +3,15 @@ import bookImage from '../../assets/Books-1.png'
 
 const SearchResults = () => {
     const results = [
-      { title: "The World of Abstract Art", category: "Art & Design", price: 25.00, image: bookImage },
-      { title: "Educated: a Memoir", category: "Education", price: 28.00, image: bookImage },
-      { title: "The Blue Flowers Ray", category: "Novel", price: 19.50, image: bookImage },
-      { title: "There There: a Novel by TO", category: "Novel", price: 20.00, image: bookImage },
-      { title: "WMNDFL: The Inspiration", category: "Business", price: 23.00, image: bookImage },
-      { title: "Making Things Happen", category: "Motivation", price: 23.00, image: bookImage },
-      { title: "Book of five rings", category: "Novel", price: 30.00, image: bookImage },
-      { title: "The Glory within", category: "Motivation", price: 13.60, image: bookImage },
-      { title: "Eat That Frog", category: "Motivation", price: 45.00, image: bookImage },
+      { title: "The World of Abstract Art", category: "Art & Design", price: "25.00", image: bookImage },
+      { title: "Educated: a Memoir", category: "Education", price: "28.00", image: bookImage },
+      { title: "The Blue Flowers Ray", category: "Novel", price: "19.50", image: bookImage },
+      { title: "There There: a Novel by TO", category: "Novel", price: "20.00", image: bookImage },
+      { title: "WMNDFL: The Inspiration", category: "Business", price: "23.00", image: bookImage },
+      { title: "Making Things Happen", category: "Motivation", price: "23.00", image: bookImage },
+      { title: "Book of five rings", category: "Novel", price: "30.00", image: bookImage },
+      { title: "The Glory within", category: "Motivation", price: "13.60", image: bookImage },
+      { title: "Eat That Frog", category: "Motivation", price: "45.00", image: bookImage },
     ];
   
     return (
