@@ -35,34 +35,34 @@ const RelatedBooks = () => {
     };
 
     return (
-        <div className="bg-blue-950 py-8 my-16" id='no-margin'>
-            <div className="relative mb-12">
-                <div className='absolute top-0 left-0 ml-4'>
-                    <h2 className="text-white text-left pl-28 mb-8 text-2xl">Related Books</h2>
+        <div className="bg-blue-950 max-h-[548px] pt-14 pb-20 mt-8 mb-16">
+            <div className="flex justify-between items-center px-8">
+                <div className=''>
+                    <h2 className="text-white text-left text-3xl mb-1">Related Books</h2>
                 </div>
-                <div className="hidden md:flex absolute right-12 mr-4">
+                <div className="hidden md:flex mb-4">
                     <button
                         onClick={prevBooks}
                         disabled={currentIndex === 0}
                         className="text-white p-2 disabled:opacity-50"
                     >
-                        <VscArrowCircleLeft size={'2rem'} />
+                        <VscArrowCircleLeft size={'3rem'} />
                     </button>
                     <button
                         onClick={nextBooks}
                         disabled={currentIndex + 5 >= books.length}
-                        className="text-white p-2 disabled:opacity-50"
+                        className="text-white p-2 pr-0 disabled:opacity-50"
                     >
-                        <VscArrowCircleRight size={'2rem'} />
+                        <VscArrowCircleRight size={'3rem'} />
                     </button>
                 </div>
             </div>
-            <div className="flex items-center justify-center flex-col md:flex-row">
+            <div className="flex items-center justify-center flex-col md:flex-row mt-14">
                 <div className="flex space-x-4 mx-4">
                     {visibleBooks.map((book) => (
                         <div
                             key={book.id}
-                            className="w-40 h-60 bg-red-500 flex items-center justify-center text-white rounded"
+                            className="w-[204px] h-[298px] bg-red-500 flex items-center justify-center text-white rounded"
                         >
                             {book.title}
                         </div>

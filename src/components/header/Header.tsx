@@ -1,15 +1,18 @@
-import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Logo from '../../assets/Logo.svg'
 import Menu from '../../assets/ic_Menu.svg'
+import { toggleMenu } from '../../store/menuSlice/MenuSlice';
+import { AppDispatch, RootState } from '../../store/store';
 import { BiChevronDown } from "react-icons/bi";
 
 export default function Header() {
-  const [landingsOpen, setLandingsOpen] = useState(false);
-  const [pagesOpen, setPagesOpen] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const menuOpen = useSelector((state: RootState) => state.menu.menuOpen);
+  const dispatch: AppDispatch = useDispatch();
+
   const handleMenuClick = () => {
-    setMenuOpen(!menuOpen);
+    dispatch(toggleMenu());
   };
+
 
   return (
     <header className='md:max-w-[1140px]'>
@@ -26,18 +29,18 @@ export default function Header() {
 
         </div>
 
-        <ul className={`md:flex md:items-center z-[10] md:z-auto md:static bg-white absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-100 top-[-400px] transition-all ease-in duration-500 ${menuOpen ? 'top-[80px] opacity-100' : 'top-[-1000px] opacity-0'}`}>
+        <ul className={`md:flex md:items-center z-[10] md:z-auto md:static bg-white absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-100 top-[-400px] transition-all ease-in duration-50 ${menuOpen ? 'top-[80px] opacity-100' : 'top-[-1000px] opacity-0'}`}>
           <li className='mx-4 my-6 md:my-0'>
             <a href="/" className='text-gray-700 hover:text-blue-500'>Home</a>
           </li>
           <li className='mx-4 my-6 md:my-0'>
-            <button onClick={() => setLandingsOpen(!landingsOpen)} className="flex items-center text-gray-700 hover:text-blue-500">Landings<BiChevronDown /></button>
+            <button className="flex items-center text-gray-700 hover:text-blue-500">Landings<BiChevronDown /></button>
           </li>
           <li className='mx-4 my-6 md:my-0'>
-            <button onClick={() => setPagesOpen(!pagesOpen)} className="flex items-center text-gray-700 hover:text-blue-500">Pages<BiChevronDown /></button>
+            <button className="flex items-center text-gray-700 hover:text-blue-500">Pages<BiChevronDown /></button>
           </li>
           <li className='mx-4 my-6 md:my-0'>
-            <a href="/" className='text-gray-700 hover:text-blue-500'>Docs</a>
+            <a href="https://developers.google.com/books/docs/overview" className='text-gray-700 hover:text-blue-500'>Docs</a>
           </li>
           <li className='mx-4 my-6 md:my-0'>
             <a href="/" className='text-gray-700 hover:text-blue-500'>Help</a>

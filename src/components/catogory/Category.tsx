@@ -28,9 +28,8 @@ const categories = [
 
 const Category = () => {
   return (
-    <div className="py-10 border-t-2 border-gray-200 md:max-w-[1140px]">
-      <div className="mt-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div className="pt-10 border-t-2 border-gray-200 md:max-w-[1140px]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-5">
           {categories.map((category, index) => (
             <div key={index} className="p-5 rounded-lg shadow-sm border hover:shadow-lg transition-shadow">
               <div className="flex flex-col items-center">
@@ -43,7 +42,6 @@ const Category = () => {
             </div>
           ))}
         </div>
-      </div>
     </div>
   );
 };

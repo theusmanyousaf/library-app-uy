@@ -1,18 +1,15 @@
-import React from 'react';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 import ReactDOM from 'react-dom/client';
 import './styles/index.css';
 import App from './App';
-import Header from './components/header/Header';
-import Footer from './components/footer/Footer';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <Header />
+  <Provider store={store}>
     <App />
-    <Footer />
-  </React.StrictMode>
+  </Provider>
 );
 
