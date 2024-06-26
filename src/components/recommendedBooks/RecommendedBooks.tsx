@@ -3,15 +3,15 @@ import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "../../store/store";
 import { fetchSearchBooks } from "../../store/slices/booksSlice";
+import { query } from '../../constants/query'
 import SearchResultCard from "../searchResultCard/SearchResultCard";
 
 export default function RecommendedBooks() {
 
     const dispatch = useAppDispatch();
     const { books, status, error } = useSelector((state: RootState) => state.books);
-
     useEffect(() => {
-        dispatch(fetchSearchBooks('fiction'));
+        dispatch(fetchSearchBooks(query));
     }, [dispatch]);
 
     const [isDesktop, setDesktop] = useState(window.innerWidth > 768);

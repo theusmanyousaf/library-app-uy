@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../store/store';
 import { fetchSearchBooks } from "../../store/slices/booksSlice";
+import { query } from '../../constants/query';
 import { Link } from 'react-router-dom';
 
 export default function BestThisMonth() {
@@ -10,7 +11,7 @@ export default function BestThisMonth() {
     const { books, status, error } = useSelector((state: RootState) => state.books);
 
     useEffect(() => {
-        dispatch(fetchSearchBooks('fiction'));
+        dispatch(fetchSearchBooks(query));
     }, [dispatch]);
 
     if (status === 'loading') {
@@ -29,7 +30,7 @@ export default function BestThisMonth() {
                     <Link key={book.id} to={`/book/${book.id}`}>
                         <BestThisMonthCard
                             title={book.volumeInfo.title}
-                            author={book.volumeInfo.authors[0]}
+                            author={book.volumeInfo.authors?.join(", ")}
                             image={book.volumeInfo.imageLinks.thumbnail}
                         />
                     </Link>

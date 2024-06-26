@@ -27,7 +27,7 @@ const SearchResults = () => {
             <Link key={book.id} to={`/book/${book.id}`}>
               <SearchResultCard
                 title={book.volumeInfo.title}
-                category={book.volumeInfo.categories[0]}
+                category={book.volumeInfo.categories?.join(', ')}
                 price={book.saleInfo.saleability}
                 image={book.volumeInfo.imageLinks.thumbnail}
               />
@@ -37,7 +37,7 @@ const SearchResults = () => {
             <Link key={book.id} to={`/book/${book.id}`}>
               <SearchResultCard
                 title={book.volumeInfo.title}
-                category={book.volumeInfo.categories[0]}
+                category={book.volumeInfo.categories.join(', ')}
                 price={book.saleInfo.saleability}
                 image={book.volumeInfo.imageLinks.thumbnail}
               />
