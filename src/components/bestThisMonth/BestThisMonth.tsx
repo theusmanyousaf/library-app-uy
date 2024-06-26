@@ -23,14 +23,14 @@ export default function BestThisMonth() {
     }
 
     return (
-        <div className="md:ml-10 col-span-1 max-h-[1012px]">
+        <div className="md:ml-10 mt-12 md:mt-0 col-span-1 md:max-h-[1012px]">
             <h2 className="text-3xl font-semibold text-left mb-6">Best This Month</h2>
             <div className="flex flex-col justify-between bg-slate-100 rounded-md">
                 {books.slice(15, 19).map((book) => (
                     <Link key={book.id} to={`/book/${book.id}`}>
                         <BestThisMonthCard
                             title={book.volumeInfo.title}
-                            author={book.volumeInfo.authors?.join(", ")}
+                            author={book.volumeInfo.authors?.slice(0,1).join(", ")}
                             image={book.volumeInfo.imageLinks.thumbnail}
                         />
                     </Link>

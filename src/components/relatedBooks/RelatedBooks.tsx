@@ -28,7 +28,7 @@ const RelatedBooks = () => {
     };
 
     return (
-        <div className="bg-blue-950 max-h-[548px] pt-14 pb-20 mt-8 mb-16">
+        <div className="bg-blue-950 max-h-[548px] pt-14 pb-20 mt-8 mb-16 overflow-clip">
             <div className="flex justify-between items-center px-8">
                 <div className=''>
                     <h2 className="text-white text-left text-3xl mb-1">Related Books</h2>
@@ -54,7 +54,7 @@ const RelatedBooks = () => {
                 <div className="flex space-x-4 mx-4">
                     {visibleBooks.map((book) => (
                         <Link key={book.id} to={`/book/${book.id}`}>
-                            <img className="object-cover md:w-[204px] md:h-[298px] rounded-md" src={book.volumeInfo.imageLinks?.thumbnail} alt="Book" />
+                            <img className="object-cover min-w-[204px] max-w-[204px] min-h-[298px] max-h-[298px] rounded-md" src={book.volumeInfo.imageLinks?.thumbnail} alt="Book" />
                         </Link>
                     ))}
                 </div>

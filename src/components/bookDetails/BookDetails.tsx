@@ -13,15 +13,15 @@ const BookDetails = () => {
     const book = books.find(book => book.id == id)
     return (
         <div className="my-16">
-            <div className="flex md:items-center md:justify-between md:max-w-[1140px]">
-                <div className='mr-[67px] mt-[46px] mb-14 max-w-[585px] flex flex-col'>
-                    <h1 className="text-5xl font-bold text-yellow-500">
+            <div className="flex md:items-center md:flex-row flex-col md:justify-between md:max-w-[1140px] text-center md:text-left">
+                <div className='md:mr-[67px] md:mt-[46px] md:mb-14 max-w-[585px] flex flex-col'>
+                    <h1 className="md:text-5xl text-3xl font-bold text-yellow-500">
                         {book?.volumeInfo.title}:
                     </h1>
-                    <p className="text-5xl font-bold text-blue-900 mb-7 my-1">{book?.volumeInfo.subtitle}</p>
-                    <h2 className="text-xl font-semibold text-gray-700 mb-9">A BOOK BY {book?.volumeInfo.authors}</h2>
-                    <p className="text-gray-600 mb-14 text-lg">
-                        {book?.volumeInfo.description}
+                    <p className="md:text-5xl text-3xl font-bold text-blue-900 mb-7 my-1">{book?.volumeInfo.subtitle}</p>
+                    <h2 className="text-xl font-semibold text-gray-700 md:mb-9">A BOOK BY {book?.volumeInfo.authors}</h2>
+                    <p className="text-gray-600 md:mb-14 mb-10">
+                        {book?.volumeInfo.description.slice(0, 250)}
                     </p>
                     <a
                         href={book?.volumeInfo.previewLink}
