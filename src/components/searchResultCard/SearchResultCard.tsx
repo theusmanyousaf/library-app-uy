@@ -10,7 +10,7 @@ type searchResultsType = {
 const SearchResultCard = ({ title, category, price, image }: searchResultsType) => {
     return (
         <div className="flex border p-3 rounded-md shadow-sm">
-            <img className="object-cover md:w-40 md:h-[238px] rounded-md" src={image} alt="Book" />
+            <img className="object-center md:w-40 md:h-[238px] rounded-md" src={image} alt="Book" />
             <div className="flex flex-col ml-3 justify-between">
                 <h2 className="text-lg font-semibold">{title}</h2>
                 <h4 className="text-gray-500">{category}</h4>

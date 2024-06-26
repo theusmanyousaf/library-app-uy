@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { fetchBooks } from '../../services/googleBooksService';
 import { Book } from '../../types/bookTypes';
 
 
@@ -11,11 +11,11 @@ interface BooksState {
 }
 
 // Define the async thunk for fetching books
-export const fetchBooks = createAsyncThunk<Book[], string>(
+export const fetchSearchBooks = createAsyncThunk<Book[], string>(
   'books/fetchBooks',
-  async (query) => {
-    const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}&key=AIzaSyBsxIthqH43jxXNjspuwNIIdBpkcOxq2mg`);
-    return response.data.items;
+  async (query: string) => {
+    const books = await fetchBooks(query);
+    return books;
   }
 );
 
@@ -36,14 +36,14 @@ const booksSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchBooks.pending, (state) => {
+      .addCase(fetchSearchBooks.pending, (state) => {
         state.status = 'loading';
       })
-      .addCase(fetchBooks.fulfilled, (state, action: PayloadAction<Book[]>) => {
+      .addCase(fetchSearchBooks.fulfilled, (state, action: PayloadAction<Book[]>) => {
         state.status = 'succeeded';
         state.books = action.payload;
       })
-      .addCase(fetchBooks.rejected, (state, action) => {
+      .addCase(fetchSearchBooks.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message || 'Failed to fetch books';
       });

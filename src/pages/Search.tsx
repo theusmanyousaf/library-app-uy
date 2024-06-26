@@ -3,7 +3,7 @@ import { ChangeEvent, FormEvent } from 'react';
 import { AppDispatch, RootState } from '../store/store';
 import { FaSearch } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux';
-import { setQuery, fetchBooks } from '../store/slices/booksSlice';
+import { setQuery, fetchSearchBooks } from '../store/slices/booksSlice';
 
 export default function Search() {
 
@@ -16,7 +16,7 @@ export default function Search() {
 
     const handleFormSubmit = (e: FormEvent) => {
         e.preventDefault();
-        dispatch(fetchBooks(query));
+        dispatch(fetchSearchBooks(query));
     };
 
     return (
