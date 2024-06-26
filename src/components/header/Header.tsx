@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import Logo from '../../assets/Logo.svg'
 import Menu from '../../assets/ic_Menu.svg'
-import { toggleMenu } from '../../store/menuSlice/MenuSlice';
+import { toggleMenu } from '../../store/slices/MenuSlice';
 import { AppDispatch, RootState } from '../../store/store';
 import { BiChevronDown } from "react-icons/bi";
 
