@@ -54,7 +54,7 @@ const RelatedBooks = () => {
                 <div className="flex space-x-4 mx-4">
                     {visibleBooks.map((book) => (
                         <Link key={book.id} to={`/book/${book.id}`}>
-                            <img className="object-cover md:w-[204px] md:h-[298px] rounded-md" src={book.volumeInfo.imageLinks.thumbnail} alt="Book" />
+                            <img className="object-cover md:w-[204px] md:h-[298px] rounded-md" src={book.volumeInfo.imageLinks?.thumbnail} alt="Book" />
                         </Link>
                     ))}
                 </div>

@@ -9,7 +9,7 @@ export const fetchBooks = async (query: string) => {
             params: {
                 q: query,
                 key: API_KEY,
-                maxResults: 24,
+                maxResults: 40,
             },
         });
         return response.data.items;

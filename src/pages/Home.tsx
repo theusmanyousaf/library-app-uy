@@ -7,7 +7,7 @@ function Home() {
 
   return (
     <>
-      <div className="md:flex md:justify-between mb-20 mt-12 md:max-h-[1012px] md:max-w-[1140px]">
+      <div className="md:flex mb-20 mt-12 md:max-h-[1012px] md:max-w-[1140px]">
         <RecommendedBooks />
         <BestThisMonth />
       </div>

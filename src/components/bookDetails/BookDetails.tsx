@@ -1,4 +1,3 @@
-import BookCover from '../../assets/Books-1.png'
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import { useParams } from 'react-router-dom';

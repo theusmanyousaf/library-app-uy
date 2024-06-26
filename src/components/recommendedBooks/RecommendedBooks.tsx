@@ -1,18 +1,17 @@
-// src/components/RecommendedBooks.tsx
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "../../store/store";
-import { fetchRecommendedBooks } from "../../store/slices/recommendedBooksSlice";
+import { fetchSearchBooks } from "../../store/slices/booksSlice";
 import SearchResultCard from "../searchResultCard/SearchResultCard";
 
 export default function RecommendedBooks() {
 
     const dispatch = useAppDispatch();
-    const { books, status, error } = useSelector((state: RootState) => state.recommeded);
+    const { books, status, error } = useSelector((state: RootState) => state.books);
 
     useEffect(() => {
-        dispatch(fetchRecommendedBooks('react'));
+        dispatch(fetchSearchBooks('fiction'));
     }, [dispatch]);
 
     const [isDesktop, setDesktop] = useState(window.innerWidth > 768);
