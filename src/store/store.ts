@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
-import menuReducer from "./slices/MenuSlice";
-import booksReducer from './slices/booksSlice'
+import menuReducer from './slices/MenuSlice';
+import booksReducer from './slices/booksSlice';
+import relatedBooksReducer from './slices/relatedBooksSlice'
 import { useDispatch } from 'react-redux';
 
 export const store = configureStore({
     reducer: {
         menu: menuReducer,
-        books: booksReducer
+        books: booksReducer,
+        related: relatedBooksReducer
     },
 })
 

@@ -1,2 +1,2 @@
-const queryArray: string[] = ['fiction', 'adventure', 'motivation', 'science', 'tech', 'google', 'finance', 'noval', 'self improvement']
+const queryArray: string[] = ['fiction', 'adventure', 'motivation', 'science', 'tech', 'google', 'finance', 'noval', 'self improvement', 'python', 'reactjs']
 export const query: string = queryArray[Math.floor(Math.random() * queryArray.length)]
