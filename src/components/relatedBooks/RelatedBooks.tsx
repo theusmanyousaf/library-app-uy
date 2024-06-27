@@ -1,9 +1,8 @@
-import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
-import { RootState } from '../../store/store';
 import { VscArrowCircleRight, VscArrowCircleLeft } from "react-icons/vsc";
 import { nextBooks, prevBooks } from '../../store/slices/relatedBooksSlice';
+import { RootState } from '../../store/store';
 
 const RelatedBooks = () => {
     const { id } = useParams<Record<string, string>>();
@@ -11,6 +10,7 @@ const RelatedBooks = () => {
     const books = useSelector((state: RootState) => state.books.books).filter((book) => book.id !== id);
     const currentIndex = useSelector((state: RootState) => state.related.currentIndex);
     const visibleBooks = books.slice(currentIndex, currentIndex + 5);
+
     return (
         <div className="bg-blue-950 max-h-[548px] pt-14 pb-20 mt-8 mb-16 overflow-clip">
             <div className="flex justify-between items-center px-8">

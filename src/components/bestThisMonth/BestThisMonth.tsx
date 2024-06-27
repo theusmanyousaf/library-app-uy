@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../store/store';
 import { fetchSearchBooks } from "../../store/slices/booksSlice";
-import { query } from '../../constants/query';
 import { Link } from 'react-router-dom';
 
 export default function BestThisMonth() {
@@ -11,7 +10,7 @@ export default function BestThisMonth() {
     const { books, status, error } = useSelector((state: RootState) => state.books);
 
     useEffect(() => {
-        dispatch(fetchSearchBooks(query));
+        dispatch(fetchSearchBooks('new'));
     }, [dispatch]);
 
     if (status === 'loading') {

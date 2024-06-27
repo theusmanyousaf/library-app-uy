@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "../../store/store";
 import { fetchSearchBooks } from "../../store/slices/booksSlice";
@@ -30,7 +30,7 @@ export default function RecommendedBooks() {
             <h2 className="text-3xl font-semibold text-left mb-6">Recommended Books</h2>
             <div className="md:grid md:grid-cols-2 md:gap-8">
                 {isDesktop
-                    ? books.slice(0,6).map((book) => (
+                    ? books.slice(0, 6).map((book) => (
                         <Link key={book.id} to={`/book/${book.id}`}>
                             <SearchResultCard
                                 title={book.volumeInfo?.title}
