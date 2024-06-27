@@ -1,23 +1,11 @@
-import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
-import { useSelector } from "react-redux";
-import { RootState } from "../../store/store";
-import useRecommendedBooks from "../../hooks/useRecommendedBooks";
+import { useScroll } from "../../hooks/useScroll";
 import SearchResultCard from "../searchResultCard/SearchResultCard";
-import { Book } from "../../types/bookTypes";
 
 const SearchResults = () => {
-  const books = useSelector((state: RootState) => state.books.books);
-  const isDesktop = useRecommendedBooks(768);
-  const [visibleBooks, setVisibleBooks] = useState<Book[]>([]);
-  
-  useEffect(() => {
-    setVisibleBooks(isDesktop ? books.slice(0, 9) : books.slice(0, 2));
-  }, [books, isDesktop]);
 
-  const handleMoreClick = () => {
-    setVisibleBooks(books);
-  };
+  const {visibleBooks, value, handleMoreClick} = useScroll(9,2)
+  
 
   return (
     <div className="my-24 md:max-w-[1140px]">
@@ -34,10 +22,10 @@ const SearchResults = () => {
           </Link>
         ))}
       </div>
-      {visibleBooks.length < books.length && (
+      {visibleBooks.length > 0  === value && (
         <div className="flex justify-center mt-7">
-          <button 
-            className="bg-blue-100 text-blue-700 py-6 px-44 font-bold rounded-lg hover:bg-blue-400 hover:text-gray-50" 
+          <button
+            className="bg-blue-100 text-blue-700 py-6 px-44 font-bold rounded-lg hover:bg-blue-400 hover:text-gray-50"
             onClick={handleMoreClick}
           >
             MORE

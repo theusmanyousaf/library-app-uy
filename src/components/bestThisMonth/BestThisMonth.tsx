@@ -1,18 +1,12 @@
 import BestThisMonthCard from '../bestThisMonthCard/BestThisMonthCard';
-import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { RootState, useAppDispatch } from '../../store/store';
-import { fetchSearchBooks } from "../../store/slices/booksSlice";
 import { Link } from 'react-router-dom';
+import { query2 } from '../../constants/query';
+import { useQuery } from '../../hooks/useQuery';
+import { useScroll } from '../../hooks/useScroll';
 
 export default function BestThisMonth() {
-    const dispatch = useAppDispatch();
-    const { books, status, error } = useSelector((state: RootState) => state.books);
-
-    useEffect(() => {
-        dispatch(fetchSearchBooks('new'));
-    }, [dispatch]);
-
+    useQuery(query2)
+    const {visibleBooks,status, error, value, handleMoreClick} = useScroll(14,14,10)
     if (status === 'loading') {
         return <div>Loading...</div>;
     }
@@ -24,17 +18,19 @@ export default function BestThisMonth() {
     return (
         <div className="md:ml-10 mt-12 md:mt-0 col-span-1 md:max-h-[1012px]">
             <h2 className="text-3xl font-semibold text-left mb-6">Best This Month</h2>
-            <div className="flex flex-col justify-between bg-slate-100 rounded-md">
-                {books.slice(15, 19).map((book) => (
+            <div className="grid justify-between bg-slate-100 rounded-md overflow-y-auto overflow-x-hidden max-h-[942px]">
+                {visibleBooks.map((book) => (
                     <Link key={book.id} to={`/book/${book.id}`}>
                         <BestThisMonthCard
-                            title={book.volumeInfo.title}
+                            title={book.volumeInfo?.title}
                             author={book.volumeInfo.authors?.slice(0,1).join(", ")}
-                            image={book.volumeInfo.imageLinks.thumbnail}
+                            image={book.volumeInfo.imageLinks?.thumbnail}
                         />
                     </Link>
                 ))}
-                <button className="text-blue-700 hover:text-black rounded-b-lg font-bold py-6">SEE BEST BOOKS</button>
+                { value &&
+                    <button onClick={handleMoreClick} className="text-blue-700 hover:text-black rounded-b-lg font-bold py-6">SEE BEST BOOKS</button>
+                }
             </div>
         </div>
     )
