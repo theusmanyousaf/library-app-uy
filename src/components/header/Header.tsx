@@ -43,7 +43,7 @@ export default function Header() {
             <a href="https://developers.google.com/books/docs/overview" className='text-gray-700 hover:text-blue-500'>Docs</a>
           </li>
           <li className='mx-4 my-6 md:my-0'>
-            <a href="/" className='text-gray-700 hover:text-blue-500'>Help</a>
+            <button className='text-gray-700 hover:text-blue-500'>Help</button>
           </li>
           <button className="text-blue-600 border-2 border-blue-600 ml-4 px-4 py-1 rounded-md hover:bg-blue-50">
             <a href="/search">Search</a>
