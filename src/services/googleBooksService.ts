@@ -1,7 +1,10 @@
 import axios from 'axios';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const API_URL = 'https://www.googleapis.com/books/v1/volumes';
-const API_KEY = 'AIzaSyBsxIthqH43jxXNjspuwNIIdBpkcOxq2mg';
+const API_KEY = process.env.API_KEY;
 
 export const fetchBooks = async (query: string) => {
     try {
