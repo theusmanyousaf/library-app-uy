@@ -4,11 +4,10 @@ import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import { Book } from "../types/bookTypes";
 
-export function useScroll(desktopLimit: number, phoneLimit: number,initial:number = 0) {
-    const { books, status, error } = useSelector((state: RootState) => state.books);
+export function useScroll(desktopLimit: number, phoneLimit: number,initial?:number) {
+    const { books, status, error, value } = useSelector((state: RootState) => state.books);
     const isDesktop = useRecommendedBooks(768);
     const [visibleBooks, setVisibleBooks] = useState<Book[]>([]);
-    const [value, setValue] = useState(true)
 
     useEffect(() => {
         setVisibleBooks(isDesktop ? books.slice(initial, desktopLimit) : books.slice(initial, phoneLimit));
@@ -16,7 +15,6 @@ export function useScroll(desktopLimit: number, phoneLimit: number,initial:numbe
 
     const handleMoreClick = () => {
         setVisibleBooks(books);
-        setValue(false);
     };
 
     return {visibleBooks, status, error, value, handleMoreClick}

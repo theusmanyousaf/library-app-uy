@@ -1,11 +1,11 @@
 import BestThisMonthCard from '../bestThisMonthCard/BestThisMonthCard';
 import { Link } from 'react-router-dom';
-import { query2 } from '../../constants/query';
+import { query } from '../../constants/query';
 import { useQuery } from '../../hooks/useQuery';
 import { useScroll } from '../../hooks/useScroll';
 
 export default function BestThisMonth() {
-    useQuery(query2)
+    useQuery(query)
     const {visibleBooks,status, error, value, handleMoreClick} = useScroll(14,14,10)
     if (status === 'loading') {
         return <div>Loading...</div>;

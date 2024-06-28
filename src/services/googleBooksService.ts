@@ -1,10 +1,11 @@
 import axios from 'axios';
-import dotenv from 'dotenv';
-
-dotenv.config();
 
 const API_URL = 'https://www.googleapis.com/books/v1/volumes';
-const API_KEY = process.env.API_KEY;
+const API_KEY = process.env.REACT_APP_BOOKS_API_KEY;
+
+if (!API_KEY) {
+    throw new Error('API key is missing in environment variables');
+}
 
 export const fetchBooks = async (query: string) => {
     try {

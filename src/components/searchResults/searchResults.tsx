@@ -5,7 +5,6 @@ import SearchResultCard from "../searchResultCard/SearchResultCard";
 const SearchResults = () => {
 
   const {visibleBooks, value, handleMoreClick} = useScroll(9,2)
-  
 
   return (
     <div className="my-24 md:max-w-[1140px]">
@@ -22,7 +21,7 @@ const SearchResults = () => {
           </Link>
         ))}
       </div>
-      {visibleBooks.length > 0  === value && (
+      {value && (
         <div className="flex justify-center mt-7">
           <button
             className="bg-blue-100 text-blue-700 py-6 px-44 font-bold rounded-lg hover:bg-blue-400 hover:text-gray-50"

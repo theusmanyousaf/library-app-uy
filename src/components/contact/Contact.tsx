@@ -12,6 +12,7 @@ const Contact = () => {
                 <div className="flex items-center md:rounded-l-md pl-2 md:h-auto h-12">
                     <FaEnvelope size={20} className="text-black min-w-5" />
                     <input
+                        name='email'
                         type="email"
                         placeholder="Your Email"
                         className="ml-2 md:w-full focus:outline-none overflow-hidden"

@@ -8,6 +8,7 @@ interface BooksState {
   books: Book[];
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
+  value: boolean
 }
 
 // Define the async thunk for fetching books
@@ -24,6 +25,7 @@ const initialState: BooksState = {
   books: [],
   status: 'idle',
   error: null,
+  value: true
 };
 
 const booksSlice = createSlice({
