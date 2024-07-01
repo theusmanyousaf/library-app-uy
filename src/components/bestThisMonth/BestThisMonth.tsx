@@ -22,13 +22,13 @@ export default function BestThisMonth() {
                 {visibleBooks.map((book) => (
                     <Link key={book.id} to={`/book/${book.id}`}>
                         <BestThisMonthCard
-                            title={book.volumeInfo?.title}
-                            author={book.volumeInfo.authors?.slice(0,1).join(", ")}
+                            title={book.volumeInfo?.title.substring(0,25)}
+                            author={book.volumeInfo.authors?.slice(0,1).join(", ").substring(0,40)}
                             image={book.volumeInfo.imageLinks?.thumbnail}
                         />
                     </Link>
                 ))}
-                { value &&
+                { !value &&
                     <button onClick={handleMoreClick} className="text-blue-700 hover:text-black rounded-b-lg font-bold py-6">SEE BEST BOOKS</button>
                 }
             </div>

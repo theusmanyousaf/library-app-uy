@@ -21,7 +21,7 @@ export default function RecommendedBooks() {
     return (
         <div className="md:col-span-2">
             <h2 className="text-3xl font-semibold text-left mb-6">Recommended Books</h2>
-            <div className="grid md:grid-cols-2 grid-cols-1 gap-8 overflow-y-auto overflow-x-hidden max-h-[942px]">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-8 overflow-y-visible overflow-x-hidden max-h-[942px]">
                 {visibleBooks.map((book) => (
                     <Link key={book.id} to={`/book/${book.id}`}>
                         <SearchResultCard
@@ -33,7 +33,7 @@ export default function RecommendedBooks() {
                     </Link>
                 ))}
             </div>
-            {visibleBooks.length > 0 === value && (
+            {!value && (
                 <div className="grid md:col-span-2 mt-8">
                     <button onClick={handleMoreClick} className="bg-blue-100 py-5 text-blue-700 font-bold rounded-lg hover:bg-blue-400 hover:text-gray-50 mb-4">MORE</button>
                 </div>

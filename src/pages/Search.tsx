@@ -1,13 +1,15 @@
-import SearchResults from "../components/searchResults/searchResults"
+import SearchResults from "../components/searchResults/SearchResults"
 import { ChangeEvent, FormEvent } from 'react';
 import { AppDispatch, RootState } from '../store/store';
 import { FaSearch } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux';
 import { setQuery, fetchSearchBooks } from '../store/slices/booksSlice';
+import { useScroll } from "../hooks/useScroll";
 
 export default function Search() {
 
     const dispatch: AppDispatch = useDispatch();
+    const { setValue } = useScroll(9,2)
     const query = useSelector((state: RootState) => state.books.query);
 
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -17,6 +19,7 @@ export default function Search() {
     const handleFormSubmit = (e: FormEvent) => {
         e.preventDefault();
         dispatch(fetchSearchBooks(query));
+        setValue(false)
     };
 
     return (
