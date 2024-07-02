@@ -9,7 +9,7 @@ const SearchResults = () => {
   return (
     <div className="my-24 md:max-w-[1140px]">
       <h2 className="text-3xl font-semibold text-left mb-6">Search Results</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 overflow-y-auto overflow-x-hidden max-h-[1012px]">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 overflow-y-auto overflow-x-hidden max-h-[942px]">
         {visibleBooks.map((book) => (
           <Link key={book.id} to={`/book/${book.id}`}>
             <SearchResultCard

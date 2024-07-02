@@ -29,6 +29,7 @@ export default function Search() {
                 <div className="w-full max-w-2xl relative">
                     <form className="flex items-center" onSubmit={handleFormSubmit}>
                         <input
+                            id="search"
                             type="text"
                             value={query}
                             onChange={handleInputChange}
