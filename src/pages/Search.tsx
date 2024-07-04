@@ -1,4 +1,4 @@
-import SearchResults from "../components/searchResults/SearchResults"
+import SearchResult from "../components/searchResult/SearchResult"
 import { ChangeEvent, FormEvent } from 'react';
 import { AppDispatch, RootState } from '../store/store';
 import { FaSearch } from "react-icons/fa";
@@ -42,7 +42,7 @@ export default function Search() {
                     </form>
                 </div>
             </div>
-            <SearchResults />
+            <SearchResult />
         </>
     )
 }

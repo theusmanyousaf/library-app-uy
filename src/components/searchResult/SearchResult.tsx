@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useScroll } from "../../hooks/useScroll";
 import SearchResultCard from "../searchResultCard/SearchResultCard";
 
-const SearchResults = () => {
+const SearchResult = () => {
 
   const { visibleBooks, handleMoreClick } = useScroll(9, 2)
 
@@ -34,4 +34,4 @@ const SearchResults = () => {
   );
 };
 
-export default SearchResults;
+export default SearchResult;
