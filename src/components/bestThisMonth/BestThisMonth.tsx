@@ -1,4 +1,5 @@
 import BestThisMonthCard from '../bestThisMonthCard/BestThisMonthCard';
+import Books from '../../assets/Book.png'
 import { Link } from 'react-router-dom';
 import { query } from '../../constants/query';
 import { useQuery } from '../../hooks/useQuery';
@@ -24,7 +25,7 @@ export default function BestThisMonth() {
                         <BestThisMonthCard
                             title={book.volumeInfo?.title.substring(0,25)}
                             author={book.volumeInfo.authors?.slice(0,1).join(", ").substring(0,40)}
-                            image={book.volumeInfo.imageLinks?.thumbnail}
+                            image={book.volumeInfo.imageLinks?.thumbnail? book.volumeInfo.imageLinks?.thumbnail: Books}
                         />
                     </Link>
                 ))}

@@ -14,7 +14,8 @@ const Contact = () => {
                     <input
                         name='email'
                         type="email"
-                        placeholder="Your Email"
+                        placeholder="user@gmail.com"
+                        autoComplete='off'
                         className="ml-2 md:w-full focus:outline-none overflow-hidden"
                     />
                 </div>

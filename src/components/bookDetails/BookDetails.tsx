@@ -1,12 +1,8 @@
-import { useSelector } from "react-redux";
-import { RootState } from "../../store/store";
-import { useParams } from 'react-router-dom';
+import { useBookDetails } from "./useBookDetails";
+
 
 const BookDetails = () => {
-    const { id } = useParams<Record<string, string>>();
-
-    const books = useSelector((state: RootState) => state.books.books);
-    const book = books.find(book => book.id === id)
+    const book = useBookDetails()
     return (
         <div className="my-16">
             <div className="flex md:items-center md:flex-row flex-col md:justify-between md:max-w-[1140px] text-center md:text-left">

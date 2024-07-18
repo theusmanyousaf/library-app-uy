@@ -8,15 +8,15 @@ export function useScroll(desktopLimit: number, phoneLimit: number,initial?:numb
     const { books, status, error } = useSelector((state: RootState) => state.books);
     const isDesktop = useRecommendedBooks(768);
     const [visibleBooks, setVisibleBooks] = useState<Book[]>([]);
-    const [value, setValue] = useState(false)
+    const [value, setValue] = useState(true)
 
     useEffect(() => {
         setVisibleBooks(isDesktop ? books.slice(initial, desktopLimit) : books.slice(initial, phoneLimit));
-    }, [books, isDesktop]);
+    }, [books, isDesktop, desktopLimit, initial, phoneLimit]);
 
     const handleMoreClick = () => {
         setVisibleBooks(books);
-        setValue(true)
+        setValue(false)
     };
 
     return {visibleBooks, status, error, value, setValue, handleMoreClick}

@@ -1,8 +1,4 @@
-type searchResultsType = {
-    title: string,
-    author: string,
-    image: string
-}
+import { searchResultsType } from "../../types/searchResultTypes";
 
 const BestThisMonthCard = ({ title, author, image }: searchResultsType) => {
     return (

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { query } from '../../constants/query'
 import SearchResultCard from "../searchResultCard/SearchResultCard";
+import Book from '../../assets/Book.png'
 import { useScroll } from "../../hooks/useScroll";
 import { useQuery } from "../../hooks/useQuery";
 
@@ -28,7 +29,7 @@ export default function RecommendedBooks() {
                             title={book.volumeInfo?.title}
                             category={book.volumeInfo.categories?.join(', ')}
                             price={book.saleInfo?.saleability}
-                            image={book.volumeInfo.imageLinks?.thumbnail}
+                            image={book.volumeInfo.imageLinks?.thumbnail? book.volumeInfo.imageLinks?.thumbnail: Book}
                         />
                     </Link>
                 ))}

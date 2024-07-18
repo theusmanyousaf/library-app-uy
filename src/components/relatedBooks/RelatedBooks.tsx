@@ -1,15 +1,12 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { useParams, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Book from '../../assets/Book.png'
 import { VscArrowCircleRight, VscArrowCircleLeft } from "react-icons/vsc";
-import { nextBooks, prevBooks } from '../../store/slices/relatedBooksSlice';
-import { RootState } from '../../store/store';
+import { useRelatedBooks } from './useRelatedBooks';
+
 
 const RelatedBooks = () => {
-    const { id } = useParams<Record<string, string>>();
-    const dispatch = useDispatch();
-    const books = useSelector((state: RootState) => state.books.books).filter((book) => book.id !== id);
-    const currentIndex = useSelector((state: RootState) => state.related.currentIndex);
-    const visibleBooks = books.slice(currentIndex, currentIndex + 5);
+    
+    const { visibleBooks, prevBooksHandler, nextBooksHandler, currentIndex, books } = useRelatedBooks()
 
     return (
         <div className="bg-blue-950 max-h-[548px] pt-14 pb-20 mt-8 mb-16 overflow-clip">
@@ -19,14 +16,14 @@ const RelatedBooks = () => {
                 </div>
                 <div className="hidden md:flex mb-4">
                     <button
-                        onClick={() => dispatch(prevBooks())}
+                        onClick={prevBooksHandler}
                         disabled={currentIndex === 0}
                         className="text-white p-2 disabled:opacity-50"
                     >
                         <VscArrowCircleLeft size={'3rem'} />
                     </button>
                     <button
-                        onClick={() => dispatch(nextBooks())}
+                        onClick={nextBooksHandler}
                         disabled={currentIndex + 5 >= books.length}
                         className="text-white p-2 pr-0 disabled:opacity-50"
                     >
@@ -38,20 +35,20 @@ const RelatedBooks = () => {
                 <div className="flex space-x-4 mx-4">
                     {visibleBooks.map((book) => (
                         <Link key={book.id} to={`/book/${book.id}`}>
-                            <img className="object-cover min-w-[204px] max-w-[204px] min-h-[298px] max-h-[298px] rounded-md" src={book.volumeInfo.imageLinks?.thumbnail} alt="Book" />
+                            <img className="object-cover min-w-[204px] max-w-[204px] min-h-[298px] max-h-[298px] rounded-md" src={book.volumeInfo.imageLinks?.thumbnail? book.volumeInfo.imageLinks?.thumbnail: Book} alt="Book" />
                         </Link>
                     ))}
                 </div>
                 <div className="flex mt-4 md:hidden">
                     <button
-                        onClick={() => dispatch(prevBooks())}
+                        onClick={prevBooksHandler}
                         disabled={currentIndex === 0}
                         className="text-white p-2 disabled:opacity-50"
                     >
                         <VscArrowCircleLeft size={'2rem'} />
                     </button>
                     <button
-                        onClick={() => dispatch(nextBooks())}
+                        onClick={nextBooksHandler}
                         disabled={currentIndex + 5 >= books.length}
                         className="text-white p-2 pr-0 disabled:opacity-50"
                     >

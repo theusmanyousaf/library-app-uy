@@ -1,18 +1,11 @@
-import { useSelector, useDispatch } from 'react-redux';
 import Logo from '../../assets/Logo.svg'
 import Menu from '../../assets/ic_Menu.svg'
-import { toggleMenu } from '../../store/slices/MenuSlice';
-import { AppDispatch, RootState } from '../../store/store';
 import { BiChevronDown } from "react-icons/bi";
+import { useHeader } from './useHeader';
 
 export default function Header() {
-  const menuOpen = useSelector((state: RootState) => state.menu.menuOpen);
-  const dispatch: AppDispatch = useDispatch();
-
-  const handleMenuClick = () => {
-    dispatch(toggleMenu());
-  };
-
+  
+  const {menuOpen, handleMenuClick} = useHeader()
 
   return (
     <header className='md:max-w-[1140px]'>

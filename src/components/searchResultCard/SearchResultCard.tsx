@@ -1,13 +1,7 @@
 import { FaHeart } from "react-icons/fa";
+import { searchResultsCardType } from "../../types/searchResultTypes";
 
-type searchResultsType = {
-    title: string,
-    category: string,
-    price: string,
-    image: string
-}
-
-const SearchResultCard = ({ title, category, price, image }: searchResultsType) => {
+const SearchResultCard = ({ title, category, price, image }: searchResultsCardType) => {
     return (
         <div className="flex md:flex-row md:items-stretch items-center text-center md:text-left flex-col border p-3 rounded-md shadow-sm w-[270px] h-[336px] md:h-[260px] md:w-[358px] md:max-w-[358px] md:max-h-[260px]">
             <img className="object-center relative top-[-30px] md:top-0 md:w-40 w-[92px] md:h-[238px] h-[137px] rounded-md md:mr-3" src={image} alt="Book" />
