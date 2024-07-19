@@ -4,6 +4,14 @@ export const content = [
 ];
 export const theme = {
   extend: {
+    fontSize: {
+      base: ['16px', '22px'],
+      '4xl': ['2.25rem', {
+        lineHeight: '3rem',
+        letterSpacing: '-0.02em',
+        fontWeight: '700',
+      }],
+    },
     fontFamily: {
       sans: ['"Open Sans"', 'sans-serif'],
     },

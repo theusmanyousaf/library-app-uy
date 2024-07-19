@@ -3,6 +3,8 @@ import useRecommendedBooks from "./useRecommendedBooks";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import { Book } from "../types/bookTypes";
+import { useQuery } from "./useQuery";
+import { query } from "../constants/query";
 
 export function useScroll(desktopLimit: number, phoneLimit: number,initial?:number) {
     const { books, status, error } = useSelector((state: RootState) => state.books);
@@ -18,6 +20,8 @@ export function useScroll(desktopLimit: number, phoneLimit: number,initial?:numb
         setVisibleBooks(books);
         setValue(false)
     };
+
+    useQuery(query)
 
     return {visibleBooks, status, error, value, setValue, handleMoreClick}
 

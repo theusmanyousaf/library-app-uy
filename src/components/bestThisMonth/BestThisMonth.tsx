@@ -1,12 +1,9 @@
 import BestThisMonthCard from '../bestThisMonthCard/BestThisMonthCard';
 import Books from '../../assets/Book.png'
 import { Link } from 'react-router-dom';
-import { query } from '../../constants/query';
-import { useQuery } from '../../hooks/useQuery';
 import { useScroll } from '../../hooks/useScroll';
 
 export default function BestThisMonth() {
-    useQuery(query)
     const {visibleBooks,status, error, value, handleMoreClick} = useScroll(14,14,10)
     if (status === 'loading') {
         return <div>Loading...</div>;
@@ -29,7 +26,7 @@ export default function BestThisMonth() {
                         />
                     </Link>
                 ))}
-                { !value &&
+                { value &&
                     <button onClick={handleMoreClick} className="text-blue-700 hover:text-black rounded-b-lg font-bold py-6">SEE BEST BOOKS</button>
                 }
             </div>

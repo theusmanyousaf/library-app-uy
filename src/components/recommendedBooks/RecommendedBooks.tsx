@@ -1,13 +1,9 @@
 import { Link } from "react-router-dom";
-import { query } from '../../constants/query'
-import SearchResultCard from "../searchResultCard/SearchResultCard";
 import Book from '../../assets/Book.png'
 import { useScroll } from "../../hooks/useScroll";
-import { useQuery } from "../../hooks/useQuery";
+import SearchResultCard from "../searchResultCard/SearchResultCard";
 
 export default function RecommendedBooks() {
-    // custom hook for fetching books based on query
-    useQuery(query);
     
     const { visibleBooks, status, error, value, handleMoreClick } = useScroll(6, 1)
 
@@ -34,7 +30,7 @@ export default function RecommendedBooks() {
                     </Link>
                 ))}
             </div>
-            {!value && (
+            {value && (
                 <div className="grid md:col-span-2 mt-8">
                     <button onClick={handleMoreClick} className="bg-blue-100 py-5 text-blue-700 font-bold rounded-lg hover:bg-blue-400 hover:text-gray-50 mb-4">MORE</button>
                 </div>
