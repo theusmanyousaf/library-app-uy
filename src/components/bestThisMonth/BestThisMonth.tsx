@@ -5,7 +5,6 @@ import { useScroll } from '../../hooks/useScroll';
 
 export default function BestThisMonth() {
     const { visibleBooks, status, error, value, handleMoreClick } = useScroll(14, 14, 10)
-    const { visibleBooks, status, error, value, handleMoreClick } = useScroll(14, 14, 10)
     if (status === 'loading') {
         return <div>Loading...</div>;
     }
