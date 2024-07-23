@@ -7,7 +7,7 @@ function Home() {
 
   return (
     <>
-      <div className="md:flex md:mb-20 mb-10 border-b-2 border-gray-200 md:border-none mt-12 md:max-h-[1012px] md:max-w-[1140px]">
+      <div className="flex flex-col md:flex-row md:mb-20 mb-10 md:mt-12 mt-[22px] gap-14 md:gap-8 md:max-h-[1012px] md:mx-1.5">
         <RecommendedBooks />
         <BestThisMonth />
       </div>

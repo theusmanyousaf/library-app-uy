@@ -13,7 +13,7 @@ const BookDetails = () => {
                     <p className="md:text-5xl text-3xl font-bold text-blue-900 mb-7 my-1">{book?.volumeInfo.subtitle}</p>
                     <h2 className="text-xl font-semibold text-gray-700 md:mb-9">A BOOK BY {book?.volumeInfo.authors}</h2>
                     <p className="text-gray-600 md:mb-14 mb-10">
-                        {book?.volumeInfo.description?.substring(0, 250)}
+                        {book?.searchInfo.textSnippet}
                     </p>
                     <a
                         href={book?.volumeInfo.previewLink}
