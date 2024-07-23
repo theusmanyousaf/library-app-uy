@@ -14,6 +14,7 @@ const SearchResult = () => {
         {visibleBooks.map((book) => (          
           <Link key={book.id} to={`/book/${book.id}`}>
             <SearchResultCard
+              id={book.id}
               title={book.volumeInfo?.title}
               category={book.volumeInfo.categories?.join(', ')}
               price={book.saleInfo?.saleability}

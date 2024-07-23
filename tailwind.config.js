@@ -6,6 +6,7 @@ export const theme = {
   extend: {
     fontSize: {
       base: ['16px', '22px'],
+      xl: ['20px', '24px'],
       '4xl': ['2.25rem', {
         lineHeight: '3rem',
         letterSpacing: '-0.02em',
