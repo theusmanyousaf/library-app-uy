@@ -1,6 +1,7 @@
 import { searchResultsType } from "../../types/searchResultTypes";
 
 const BestThisMonthCard = ({ title, price, image }: searchResultsType) => {
+const BestThisMonthCard = ({ title, price, image }: searchResultsType) => {
     return (
         <div className="flex md:gap-[26.6px] gap-[14.5px]">
             <img className="object-center max-w-24 md:max-w-[120px] min-w-[95.5px] h-[142px] md:min-h-[177.5px] md:max-h-[177.5px] rounded-md" src={image} alt="Book" />

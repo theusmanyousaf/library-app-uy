@@ -1,7 +1,9 @@
 import { FaHeart } from "react-icons/fa";
 import { searchResultsCardType } from "../../types/searchResultTypes";
 import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
+const SearchResultCard = ({id, title, category, price, image}: searchResultsCardType) => {
 const SearchResultCard = ({id, title, category, price, image}: searchResultsCardType) => {
     return (
         <div className="flex flex-col md:flex-row text-center md:text-left border rounded-md shadow-sm md:py-[11px] md:pl-[11px] md:h-[260px] md:w-[358px] md:gap-2">
