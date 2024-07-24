@@ -2,7 +2,7 @@ import { FaEnvelope } from 'react-icons/fa';
 
 const Contact = () => {
     return (
-        <div className="flex md:flex-row flex-col md:justify-between gap-8 md:items-center bg-gradient-to-l from-blue-600 to-blue-900 pl-6 pr-4 pb-7 pt-[26px] md:px-[60px] md:pt-[60px] md:pb-20 mt-24 md:rounded-lg md:mx-1.5">
+        <div className="flex xl:flex-row flex-col md:justify-between gap-8 md:items-center bg-gradient-to-l from-blue-500 to-blue-800 pl-6 pr-4 pb-7 pt-[26px] md:px-[60px] md:pt-[60px] md:pb-20 mt-24 md:rounded-lg md:mx-[10.417%]">
             <div className='md:flex-none'>
                 <h2 className="text-4xl italic font-bold text-white hidden md:block">
                     Be the First to know <br />Our Promo before others!

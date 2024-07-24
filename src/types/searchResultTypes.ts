@@ -1,4 +1,5 @@
 export type searchResultsType = {
+    id: string,
     title: string,
     price: string,
     image: string

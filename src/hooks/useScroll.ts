@@ -8,7 +8,7 @@ import { query } from "../constants/query";
 
 export function useScroll(desktopLimit: number, phoneLimit: number,initial?:number) {
     const { books, status, error } = useSelector((state: RootState) => state.books);
-    const isDesktop = useRecommendedBooks(768);
+    const isDesktop = useRecommendedBooks(767);
     const [visibleBooks, setVisibleBooks] = useState<Book[]>([]);
     const [value, setValue] = useState(true)
 

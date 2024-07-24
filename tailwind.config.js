@@ -12,6 +12,7 @@ export const theme = {
         letterSpacing: '-0.02em',
         fontWeight: '700',
       }],
+      '5xl': ['48px', '60px']
     },
     fontFamily: {
       sans: ['"Open Sans"', 'sans-serif'],

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Book from '../../assets/Book.png'
-import { VscArrowCircleRight, VscArrowCircleLeft } from "react-icons/vsc";
+import { PiArrowCircleRightLight, PiArrowCircleLeftLight } from "react-icons/pi";
 import { useRelatedBooks } from './useRelatedBooks';
 
 
@@ -9,50 +9,50 @@ const RelatedBooks = () => {
     const { visibleBooks, prevBooksHandler, nextBooksHandler, currentIndex, books } = useRelatedBooks()
 
     return (
-        <div className="bg-blue-950 max-h-[548px] pt-14 pb-20 mt-8 mb-16 overflow-clip">
-            <div className="flex justify-between items-center px-8">
-                <div className=''>
-                    <h2 className="text-white text-left text-3xl mb-1">Related Books</h2>
+        <div className="bg-[#183B56] py-12 md:pt-14 md:pb-20 md:mb-16 mb-7 w-full overflow-clip">
+            <div className="flex md:justify-between justify-center md:mb-0 mb-10 md:mx-[10.417%]">
+                <div>
+                    <h2 className="text-white text-3xl">Related Books</h2>
                 </div>
-                <div className="hidden md:flex mb-4">
+                <div className="hidden md:flex">
                     <button
                         onClick={prevBooksHandler}
                         disabled={currentIndex === 0}
-                        className="text-white p-2 disabled:opacity-50"
+                        className="text-white px-2 disabled:opacity-50"
                     >
-                        <VscArrowCircleLeft size={'3rem'} />
+                        <PiArrowCircleLeftLight size={56} />
                     </button>
                     <button
                         onClick={nextBooksHandler}
                         disabled={currentIndex + 5 >= books.length}
-                        className="text-white p-2 pr-0 disabled:opacity-50"
+                        className="text-white px-2 pr-0 disabled:opacity-50"
                     >
-                        <VscArrowCircleRight size={'3rem'} />
+                        <PiArrowCircleRightLight size={56} />
                     </button>
                 </div>
             </div>
-            <div className="flex items-center justify-center flex-col md:flex-row mt-14">
-                <div className="flex space-x-4 mx-4">
+            <div className="flex md:items-center flex-col md:mt-14 ">
+                <div className="flex space-x-[30px] mx-9 md:overflow-x-hidden overflow-x-scroll">
                     {visibleBooks.map((book) => (
                         <Link key={book.id} to={`/book/${book.id}`}>
                             <img className="object-cover min-w-[204px] max-w-[204px] min-h-[298px] max-h-[298px] rounded-md" src={book.volumeInfo.imageLinks?.thumbnail? book.volumeInfo.imageLinks?.thumbnail: Book} alt="Book" />
                         </Link>
                     ))}
                 </div>
-                <div className="flex mt-4 md:hidden">
+                <div className="flex items-center justify-center md:hidden mt-10">
                     <button
                         onClick={prevBooksHandler}
                         disabled={currentIndex === 0}
-                        className="text-white p-2 disabled:opacity-50"
+                        className="text-white disabled:opacity-50"
                     >
-                        <VscArrowCircleLeft size={'2rem'} />
+                        <PiArrowCircleLeftLight size={48} />
                     </button>
                     <button
                         onClick={nextBooksHandler}
                         disabled={currentIndex + 5 >= books.length}
-                        className="text-white p-2 pr-0 disabled:opacity-50"
+                        className="text-white disabled:opacity-50"
                     >
-                        <VscArrowCircleRight size={'2rem'} />
+                        <PiArrowCircleRightLight size={48} />
                     </button>
                 </div>
             </div>

@@ -7,7 +7,7 @@ import Footer from './components/footer/Footer';
 
 function App() {
     return (
-        <div className='md:px-[10%]'>
+        <>
             <Router>
                 <Header />
                 <Routes>
@@ -17,7 +17,7 @@ function App() {
                 </Routes>
                 <Footer />
             </Router>
-        </div>
+        </>
     );
 }
 
