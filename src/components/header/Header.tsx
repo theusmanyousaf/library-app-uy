@@ -37,12 +37,12 @@ export default function Header() {
             <button className="flex items-center text-gray-700 hover:text-blue-500">Pages<BiChevronDown /></button>
           </li>
           <li className='my-6 md:my-0'>
-            <a target='_blank' href="https://developers.google.com/books/docs/overview" className='text-gray-700 hover:text-blue-500'>Docs</a>
+            <a target='_blank' rel='noreferrer' href="https://developers.google.com/books/docs/overview" className='text-gray-700 hover:text-blue-500'>Docs</a>
           </li>
           <li className='my-6 md:my-0'>
             <button className='text-gray-700 hover:text-blue-500'>Help</button>
           </li>
-          <button className="text-blue-600 border-2 border-blue-600 font-bold py-3 px-[38px] max-h-12 rounded-md hover:bg-blue-50">
+          <button className="text-blue-600 border-2 border-blue-600 font-bold lg:py-3 py-2 lg:px-[38px] px-6 max-h-12 rounded-md hover:bg-blue-50">
             <Link to="/search">Search</Link>
           </button>
         </ul>

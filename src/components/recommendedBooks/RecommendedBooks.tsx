@@ -15,9 +15,9 @@ export default function RecommendedBooks() {
     }
 
     return (
-        <div className="flex flex-col ml-5 md:ml-0 max-h-[492px] md:max-h-none">
+        <div className="flex flex-col max-h-[492px] md:max-h-none">
             <h2 className="text-[28px] lg:text-[32px] font-bold text-[#183B56] text-center md:text-left md:mb-[30px] mb-[72px] h-9 lg:h-10">Recommended Books</h2>
-            <div className="flex md:grid md:grid-cols-1 xl:grid-cols-2 gap-3.5 md:gap-8 md:ml-[3px] overflow-x-auto">
+            <div className="flex md:grid md:grid-cols-1 xl:grid-cols-2 gap-3.5 md:gap-8 md:ml-[3px] ml-5 overflow-x-auto">
                 {visibleBooks.map((book) => (
                     <SearchResultCard
                         key={book.id}

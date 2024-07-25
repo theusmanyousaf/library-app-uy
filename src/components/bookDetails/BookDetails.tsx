@@ -4,13 +4,13 @@ import Book from '../../assets/Book.png'
 const BookDetails = () => {
     const book = useBookDetails()
     return (
-        <div className="md:mb-24 mb-[27px] md:mt-4 mt-[113px] mx-5 md:ml-[8.75%] md:mr-[12.08%]">
+        <div className="md:mb-24 mb-[27px] md:mt-4 mt-[113px] mx-5 md:mx-[4%] xl:ml-[8.75%] xl:mr-[12.08%]">
             <div className="flex items-center md:flex-row flex-col justify-center md:justify-between text-center md:text-left">
-                <div className='md:mr-[67px] md:mt-[46px] md:mb-14 max-w-[585px] flex flex-col'>
-                    <h1 className="md:text-5xl text-3xl font-bold text-yellow-500">
+                <div className='xl:mr-[67px] md:mr-8 md:mt-[46px] md:mb-14 lg:w-full md:w-2/3 lg:max-w-[585px] flex flex-col'>
+                    <h1 className="xl:text-5xl text-3xl font-bold text-yellow-500">
                         {book?.volumeInfo.title}:
                     </h1>
-                    <p className="md:text-5xl text-3xl font-bold text-blue-900 mb-6 md:mt-0 md:mb-7 my-1">{book?.volumeInfo.subtitle}</p>
+                    <p className="xl:text-5xl text-3xl font-bold text-blue-900 mb-6 md:mt-0 md:mb-7 my-1">{book?.volumeInfo.subtitle}</p>
                     <h2 className="text-xl font-semibold text-gray-700 md:mb-9">A BOOK BY {book?.volumeInfo.authors}</h2>
                     <p className="text-gray-600 md:mb-14 mb-10">
                         {book?.searchInfo?.textSnippet}
@@ -25,7 +25,7 @@ const BookDetails = () => {
                         </a>
                     </div>
                 </div>
-                <div className="mt-8 min-h-[333px] xl:min-h-[580px] w-full md:mt-0 bg-slate-100 flex items-center justify-center">
+                <div className="mt-8 min-h-[333px] lg:min-h-[580px] lg:w-full md:w-1/3 w-full md:mt-0 bg-slate-100 flex items-center justify-center">
                     <img
                         className="lg:h-[374px] lg:w-[250px] w-36 h-[216px] object-cover"
                         src={book?.volumeInfo.imageLinks?.thumbnail ? book?.volumeInfo.imageLinks?.thumbnail : Book}
