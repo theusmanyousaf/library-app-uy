@@ -18,7 +18,7 @@ export default function Search() {
                             value={query}
                             onChange={handleInputChange}
                             placeholder="Search query"
-                            className="w-full md:px-6 md:py-6 px-4 py-3 pr-12 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100"
+                            className="w-full md:px-6 md:py-6 px-4 py-[11px] pr-12 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100"
                         />
                         <button type="submit" className="absolute right-0 top-0 md:mt-6 mt-4 md:mr-6 mr-4">
                             <FaSearch size={'1.25rem'} className="text-gray-400 hover:text-gray-500" />

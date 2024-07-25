@@ -31,8 +31,8 @@ const RelatedBooks = () => {
                     </button>
                 </div>
             </div>
-            <div className="flex md:items-center flex-col md:mt-14 ">
-                <div className="flex space-x-[30px] mx-9 md:overflow-x-hidden overflow-x-scroll">
+            <div className="flex xl:items-center flex-col md:mt-14 ">
+                <div className="flex space-x-[30px] mx-9 xl:overflow-x-clip overflow-x-scroll">
                     {visibleBooks.map((book) => (
                         <Link key={book.id} to={`/book/${book.id}`}>
                             <img className="object-cover min-w-[204px] max-w-[204px] min-h-[298px] max-h-[298px] rounded-md" src={book.volumeInfo.imageLinks?.thumbnail? book.volumeInfo.imageLinks?.thumbnail: Book} alt="Book" />
@@ -43,14 +43,14 @@ const RelatedBooks = () => {
                     <button
                         onClick={prevBooksHandler}
                         disabled={currentIndex === 0}
-                        className="text-white disabled:opacity-50"
+                        className="text-white px-2 disabled:opacity-50"
                     >
                         <PiArrowCircleLeftLight size={48} />
                     </button>
                     <button
                         onClick={nextBooksHandler}
                         disabled={currentIndex + 5 >= books.length}
-                        className="text-white disabled:opacity-50"
+                        className="text-white px-2 pr-0 disabled:opacity-50"
                     >
                         <PiArrowCircleRightLight size={48} />
                     </button>

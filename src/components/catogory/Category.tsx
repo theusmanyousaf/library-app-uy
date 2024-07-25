@@ -3,7 +3,7 @@ import { categories } from "../../constants/category";
 
 const Category = () => {
   return (
-    <div className="md:pt-[60px] border-t border-gray-300 flex flex-col md:mx-[10.417%] mx-[15px] items-center justify-center relative">
+    <div className="md:pt-[60px] border-t border-gray-300 flex flex-col lg:mx-[10.417%] md:mx-[4%] mx-[15px] items-center justify-center relative">
       <div className="grid grid-cols-2 xl:grid-cols-4 mt-[55px] md:mt-0 md:gap-[26px] gap-2.5">
         {categories.map((category, index) => (
           <div key={index} className="rounded-lg md:shadow-sm border md:hover:shadow-lg md:transition-shadow flex flex-col items-center justify-between">
@@ -15,7 +15,7 @@ const Category = () => {
           </div>
         ))}
       </div>
-      <div className="md:absolute bg-white rounded-full md:w-14 md:h-14 w-12 h-12 shadow-md md:mt-1 flex items-center justify-center md:-right-7 mt-9"><FaArrowRight size={15.75} /></div>
+      <div className="md:absolute bg-white rounded-full md:w-14 md:h-14 w-12 h-12 shadow-md md:mt-1 flex items-center justify-center lg:-right-7 md:-right-2 mt-9"><FaArrowRight size={15.75} /></div>
     </div>
   );
 };

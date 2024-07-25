@@ -4,7 +4,7 @@ import SearchResultCard from "../searchResultCard/SearchResultCard";
 
 export default function RecommendedBooks() {
 
-    const { visibleBooks, status, error, value, handleMoreClick } = useScroll(6, 1)
+    const { visibleBooks, status, error, value, handleMoreClick } = useScroll(6, 6)
 
     if (status === 'loading') {
         return <div>Loading...</div>;
@@ -15,11 +15,12 @@ export default function RecommendedBooks() {
     }
 
     return (
-        <div className="flex flex-col">
-            <h2 className="text-[28px] md:text-[32px] font-bold text-[#183B56] text-center md:text-left md:mb-[30px] mb-[72px] h-9 md:h-10">Recommended Books</h2>
-            <div className="grid md:grid-cols-1 xl:grid-cols-2 gap-8 md:ml-[3px] overflow-y-visible overflow-x-hidden">
+        <div className="flex flex-col ml-5 md:ml-0 max-h-[492px] md:max-h-none">
+            <h2 className="text-[28px] lg:text-[32px] font-bold text-[#183B56] text-center md:text-left md:mb-[30px] mb-[72px] h-9 lg:h-10">Recommended Books</h2>
+            <div className="flex md:grid md:grid-cols-1 xl:grid-cols-2 gap-3.5 md:gap-8 md:ml-[3px] overflow-x-auto">
                 {visibleBooks.map((book) => (
                     <SearchResultCard
+                        key={book.id}
                         id={book.id}
                         title={book.volumeInfo?.title?.substring(0, 40)}
                         category={book.volumeInfo.categories?.join(', ')}
@@ -29,8 +30,8 @@ export default function RecommendedBooks() {
                 ))}
             </div>
             {value && (
-                <div className="grid mt-6 md:mt-[26px] font-bold bg-blue-100 md:pt-[25px] md:pb-[26px] py-3.5 rounded-lg text-blue-500 text-base  hover:bg-blue-400 hover:text-gray-50 mx-5 md:mx-0">
-                    <button onClick={handleMoreClick} className="h-5">MORE RECOMMENDATIONS</button>
+                <div onClick={handleMoreClick} className="grid mt-6 md:mt-[26px] font-bold bg-blue-100 md:pt-[25px] md:pb-[26px] py-3.5 rounded-lg text-blue-500 text-base  hover:bg-blue-400 hover:text-gray-50 mx-5 md:mx-0">
+                    <button className="h-5">MORE RECOMMENDATIONS</button>
                 </div>
             )}
         </div>

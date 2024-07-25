@@ -19,6 +19,7 @@ export default function BestThisMonth() {
                 <div className='flex flex-col mb-10 md:mb-[26.5px] gap-y-9 md:gap-y-[36.5px]'>
                     {visibleBooks.map((book) => (
                         <BestThisMonthCard
+                            key={book.id}
                             id={book.id}
                             title={book.volumeInfo?.title.substring(0, 20)}
                             price={"$23.00"}
@@ -28,8 +29,8 @@ export default function BestThisMonth() {
                 </div>
                 <hr className='mx-6' />
                 {value &&
-                    <div className='flex md:pb-[26px] md:pt-[25px] py-5 rounded-b-lg justify-center font-bold'>
-                        <button onClick={handleMoreClick} className="text-blue-500 hover:text-black text-base h-5">SEE BEST BOOKS</button>
+                    <div onClick={handleMoreClick} className='flex md:pb-[26px] md:pt-[25px] py-5 rounded-b-lg justify-center font-bold'>
+                        <button className="text-blue-500 hover:text-black text-base h-5">SEE BEST BOOKS</button>
                     </div>}
             </div>
         </div>
