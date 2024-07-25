@@ -7,9 +7,9 @@ const SearchResult = () => {
   const { visibleBooks, handleMoreClick } = useScroll(9, 2)
 
   return (
-    <div className="flex flex-col mb-9 md:mb-24 mx-[19px] md:mx-[2%] lg:ml-[10.63%] lg:mr-[10.417%] max-h-[845px] md:max-h-[1013px]">
+    <div className="flex flex-col mb-9 md:mb-24 mx-[19px] md:mx-[2%] lg:ml-[10.63%] lg:mr-[10.417%]">
       <h2 className="md:text-[32px] md:h-10 text-[28px] h-9 font-bold text-center md:text-left md:mb-[30px] mb-[72px]">Search Results</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 lg:gap-8 md:gap-4 gap-10 overflow-y-auto overflow-x-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 lg:gap-8 md:gap-4 gap-10">
         {visibleBooks.map((book) => (
           <SearchResultCard
             key={book.id}
