@@ -14,7 +14,7 @@ export default function Header() {
       <nav className='py-[18px] md:py-[26px] md:flex md:items-center md:justify-between'>
         <div className='flex justify-between items-center'>
           <span className='cursor-pointer'>
-            <Link to="/"><img src={Logo} alt='logo' /></Link>
+            <a href="/"><img src={Logo} alt='logo' /></a>
           </span>
 
           <span className='cursor-pointer md:hidden block'>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const BestThisMonthCard = ({ id, title, price, image }: searchResultsType) => {
     return (
         <div className="flex md:gap-[26.67px] gap-[14.54px] md:h-[177.5px] mr-7 md:mr-0">
-            <Link key={id} to={`/book/${id}`}><img className="object-center h-[142px] min-w-[95.45px] sm:h-[177.5px] sm:min-w-[119px] rounded-md" src={image} alt="Book" /></Link>
+            <Link key={id} to={`/book/${id}`}><img className="object-center h-[142px] min-w-[95.45px] max-w-[95.45px] sm:h-[177.5px] sm:min-w-[119px] rounded-md" src={image} alt="Book" /></Link>
             <div className="flex flex-col">
                 <h2 className="font-bold md:text-[22px] mb-3 md:mb-[15px] mt-1 md:mt-[9px] sm:pr-2">{title}</h2>
                 <h2 className="text-xl text-blue-500 font-bold mb-3.5 md:mb-[21px]">{price}</h2>
