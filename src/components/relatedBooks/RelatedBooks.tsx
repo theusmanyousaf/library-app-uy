@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Book from '../../assets/Book.png'
+import Book from '../../assets/book.png'
 import { PiArrowCircleRightLight, PiArrowCircleLeftLight } from "react-icons/pi";
 import { useRelatedBooks } from './useRelatedBooks';
 

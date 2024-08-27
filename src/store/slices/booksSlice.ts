@@ -1,16 +1,9 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { fetchBooks } from '../../services/googleBooksService';
 import { Book } from '../../types/bookTypes';
+import { BooksState } from '../../types/bookStateTypes';
 
-
-interface BooksState {
-  query: string;
-  books: Book[];
-  status: 'idle' | 'loading' | 'succeeded' | 'failed';
-  error: string | null;
-}
-
-// Define the async thunk for fetching books
+// async thunk for fetching books
 export const fetchSearchBooks = createAsyncThunk<Book[], string>(
   'books/fetchBooks',
   async (query: string) => {

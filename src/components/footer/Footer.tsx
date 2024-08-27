@@ -1,5 +1,5 @@
-import Logo from '../../assets/Logo.svg'
-import Heart from '../../assets/Heart.svg'
+import Logo from '../../assets/logo.svg'
+import Heart from '../../assets/heart.svg'
 
 const Footer = () => {
   return (

@@ -1,7 +1,7 @@
-import Finance from '../assets/iconspace_Presentation_Chart_Up.png'
-import Book from '../assets/iconspace_Book_3.png'
-import Diamond from '../assets/iconspace_Diamond.png'
-import Group from '../assets/iconspace_Group.png'
+import Finance from '../assets/iconPresentationChartUp.png'
+import Book from '../assets/iconBook.png'
+import Diamond from '../assets/iconDiamond.png'
+import Group from '../assets/iconGroup.png'
 
 export const categories = [
   {

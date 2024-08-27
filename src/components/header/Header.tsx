@@ -1,5 +1,5 @@
-import Logo from '../../assets/Logo.svg'
-import Menu from '../../assets/ic_Menu.svg'
+import Logo from '../../assets/logo.svg'
+import Menu from '../../assets/icMenu.svg'
 import { BiChevronDown } from "react-icons/bi";
 import { GrClose } from "react-icons/gr";
 import { useHeader } from './useHeader';

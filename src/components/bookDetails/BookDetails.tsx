@@ -1,5 +1,5 @@
 import { useBookDetails } from "./useBookDetails";
-import Book from '../../assets/Book.png'
+import Book from '../../assets/book.png'
 
 const BookDetails = () => {
     const book = useBookDetails()

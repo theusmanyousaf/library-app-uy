@@ -1,5 +1,5 @@
 import BestThisMonthCard from '../bestThisMonthCard/BestThisMonthCard';
-import Books from '../../assets/Book.png'
+import Books from '../../assets/book.png'
 import { useScroll } from '../../hooks/useScroll';
 
 export default function BestThisMonth() {

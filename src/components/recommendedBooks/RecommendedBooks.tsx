@@ -1,4 +1,4 @@
-import Book from '../../assets/Book.png'
+import Book from '../../assets/book.png'
 import { useScroll } from "../../hooks/useScroll";
 import SearchResultCard from "../searchResultCard/SearchResultCard";
 

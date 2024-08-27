@@ -1,5 +1,5 @@
 import { useScroll } from "../../hooks/useScroll";
-import Book from '../../assets/Book.png'
+import Book from '../../assets/book.png'
 import SearchResultCard from "../searchResultCard/SearchResultCard";
 
 const SearchResult = () => {
