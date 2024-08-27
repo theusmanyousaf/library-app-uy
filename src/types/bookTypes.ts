@@ -78,3 +78,11 @@ export interface Book {
     accessInfo: AccessInfo;
     searchInfo: SearchInfo;
 }
+
+export type RelatedBooksType = {
+    relatedBooks: Book[]
+    prevBooksHandler: any
+    nextBooksHandler: any
+    currentIndex: number
+    length: number
+}

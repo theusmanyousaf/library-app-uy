@@ -1,8 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-
-interface RelatedBooksState {
-    currentIndex: number;
-}
+import { RelatedBooksState } from '../../types/bookStateTypes';
 
 const initialState: RelatedBooksState = {
     currentIndex: 0,

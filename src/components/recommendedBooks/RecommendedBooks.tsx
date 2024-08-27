@@ -1,13 +1,14 @@
 import Book from '../../assets/book.png'
 import { useScroll } from "../../hooks/useScroll";
 import SearchResultCard from "../searchResultCard/SearchResultCard";
+import { ThreeDots } from 'react-loader-spinner';
 
 export default function RecommendedBooks() {
 
     const { visibleBooks, status, error, value, handleMoreClick } = useScroll(6, 6)
 
     if (status === 'loading') {
-        return <div>Loading...</div>;
+        return <div className='w-screen flex items-center justify-center h-[512px]'><ThreeDots radius={40} width='200' height='200' color='blue' visible={true} /></div>;
     }
 
     if (status === 'failed') {

@@ -1,11 +1,12 @@
 import BestThisMonthCard from '../bestThisMonthCard/BestThisMonthCard';
 import Books from '../../assets/book.png'
 import { useScroll } from '../../hooks/useScroll';
+import { ThreeDots } from 'react-loader-spinner';
 
 export default function BestThisMonth() {
-    const { visibleBooks, status, error, value, handleMoreClick } = useScroll(14, 14, 10)
+    const { visibleBooks, status, error, value, handleMoreClick } = useScroll(22, 22, 18)
     if (status === 'loading') {
-        return <div>Loading...</div>;
+        return <div className='flex items-center justify-center h-[512px]'><ThreeDots radius={12} width='100' height='100' color='blue' visible={false} /></div>;
     }
 
     if (status === 'failed') {
