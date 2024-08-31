@@ -20,11 +20,11 @@ export default function BestThisMonth() {
                 <div className='flex flex-col mb-10 md:mb-[26.5px] gap-y-9 md:gap-y-[36.5px]'>
                     {visibleBooks.map((book) => (
                         <BestThisMonthCard
-                            key={book.id}
-                            id={book.id}
-                            title={book.volumeInfo?.title.substring(0, 20)}
+                            key={book?.id}
+                            id={book?.id}
+                            title={book?.volumeInfo?.title.substring(0, 20)}
                             price={"$23.00"}
-                            image={book.volumeInfo.imageLinks?.thumbnail ? book.volumeInfo.imageLinks?.thumbnail : Books}
+                            image={book?.volumeInfo?.imageLinks?.thumbnail ? book?.volumeInfo?.imageLinks?.thumbnail : Books}
                         />
                     ))}
                 </div>

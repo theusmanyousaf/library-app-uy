@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from '../../store/store';
+import { useAppDispatch } from '../store/store';
 import { useParams } from 'react-router-dom';
-import { RootState } from '../../store/store';
-import { nextBooks, prevBooks } from '../../store/slices/relatedBooksSlice';
-import { Book } from '../../types/bookTypes';
+import { RootState } from '../store/store';
+import { nextBooks, prevBooks } from '../store/slices/relatedBooksSlice';
+import { Book } from '../types/bookTypes';
 
 export function useBookDetails() {
     const { id } = useParams<Record<string, string>>();

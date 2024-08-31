@@ -8,7 +8,7 @@ export default function RecommendedBooks() {
     const { visibleBooks, status, error, value, handleMoreClick } = useScroll(6, 6)
 
     if (status === 'loading') {
-        return <div className='w-screen flex items-center justify-center h-[512px]'><ThreeDots radius={40} width='200' height='200' color='blue' visible={true} /></div>;
+        return <div className='w-screen flex items-center justify-center h-[512px]'><ThreeDots radius={40} width='200' height='200' color='#1565D8' visible={true} /></div>;
     }
 
     if (status === 'failed') {
@@ -21,12 +21,12 @@ export default function RecommendedBooks() {
             <div className="flex md:grid md:grid-cols-1 xl:grid-cols-2 gap-3.5 md:gap-8 md:ml-[3px] ml-5 overflow-x-auto">
                 {visibleBooks.map((book) => (
                     <SearchResultCard
-                        key={book.id}
-                        id={book.id}
-                        title={book.volumeInfo?.title?.substring(0, 40)}
-                        category={book.volumeInfo.categories?.join(', ')}
+                        key={book?.id}
+                        id={book?.id}
+                        title={book?.volumeInfo?.title?.substring(0, 40)}
+                        category={book?.volumeInfo?.categories?.join(', ')}
                         price={"$23.00"}
-                        image={book.volumeInfo.imageLinks?.thumbnail ? book.volumeInfo.imageLinks?.thumbnail : Book}
+                        image={book?.volumeInfo?.imageLinks?.thumbnail ? book?.volumeInfo?.imageLinks?.thumbnail : Book}
                     />
                 ))}
             </div>

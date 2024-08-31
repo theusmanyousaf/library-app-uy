@@ -1,5 +1,6 @@
-import Logo from '../../assets/logo.svg'
-import Heart from '../../assets/heart.svg'
+import Logo from '../../assets/logo.svg';
+import Heart from '../../assets/heart.svg';
+import { footerData } from '../../constants/footerData';
 
 const Footer = () => {
   return (
@@ -8,51 +9,27 @@ const Footer = () => {
         <div className='lg:w-[263px] md:w-52 gap-y-4 md:gap-y-7 flex md:flex-none flex-col justify-center md:justify-start md:items-start items-center pl-6 md:pl-0 pr-[33px] md:pr-0'>
           <a href="/"><img className='h-6 md:h-auto w-auto' src={Logo} alt='logo' /></a>
           <p className='text-center text-sm md:text-base md:text-left text-gray-500 px-1 md:mr-8 pt-1 pb-2.5'>Build a modern and creative website with crealand</p>
-          <div className="flex space-x-4 md:space-x-1.5">
-            <div className="bg-red-500 h-10 w-10 rounded-full"></div>
-            <div className="bg-red-500 h-10 w-10 rounded-full"></div>
-            <div className="bg-red-500 h-10 w-10 rounded-full"></div>
-            <div className="bg-red-500 h-10 w-10 rounded-full"></div>
-          </div>
+          {
+            <div className="flex space-x-4 md:space-x-1.5">
+              {Object.entries(footerData).map(name=>
+                <div className="bg-red-500 h-10 w-10 rounded-full"></div>
+              )}
+            </div>
+          }
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:gap-[30px] justify-around pl-6 md:pl-0">
-          <div className="mb-[39px] md:mb-0">
-            <h4 className="md:text-lg text-base font-bold mb-5 md:mb-[31px] md:h-[25px]">Product</h4>
-            <ul className='text-sm lg:text-base'>
-              <li className="mb-[15px] md:mb-6"><p className="text-gray-600 hover:text-gray-900">Landingpage</p></li>
-              <li className="mb-[15px] md:mb-6"><p className="text-gray-600 hover:text-gray-900">Features</p></li>
-              <li className="mb-[15px] md:mb-6"><p className="text-gray-600 hover:text-gray-900">Documentation</p></li>
-              <li className="mb-[15px] md:mb-6"><p className="text-gray-600 hover:text-gray-900">Referral Program</p></li>
-              <li><p className="text-gray-600 hover:text-gray-900">Pricing</p></li>
-            </ul>
-          </div>
-          <div className='mb-[39px] md:mb-0'>
-            <h4 className="md:text-lg text-base font-bold mb-5 md:mb-[31px] md:h-[25px]">Services</h4>
-            <ul className='text-sm lg:text-base'>
-              <li className="mb-[15px] md:mb-6"><p className="text-gray-600 hover:text-gray-900">Documentation</p></li>
-              <li className="mb-[15px] md:mb-6"><p className="text-gray-600 hover:text-gray-900">Design</p></li>
-              <li className="mb-[15px] md:mb-6"><p className="text-gray-600 hover:text-gray-900">Themes</p></li>
-              <li className="mb-[15px] md:mb-6"><p className="text-gray-600 hover:text-gray-900">Illustrations</p></li>
-              <li><p className="text-gray-600 hover:text-gray-900">UI Kit</p></li>
-            </ul>
-          </div>
-          <div className="mb-[47px] md:mb-0">
-            <h4 className="md:text-lg text-base font-bold mb-5 md:mb-[31px] md:h-[25px]">Company</h4>
-            <ul className='text-sm lg:text-base'>
-              <li className="mb-[15px] md:mb-6"><p className="text-gray-600 hover:text-gray-900">About</p></li>
-              <li className="mb-[15px] md:mb-6"><p className="text-gray-600 hover:text-gray-900">Terms</p></li>
-              <li className="mb-[15px] md:mb-6"><p className="text-gray-600 hover:text-gray-900">Privacy Policy</p></li>
-              <li><p className="text-gray-600 hover:text-gray-900">Careers</p></li>
-            </ul>
-          </div>
-          <div className="mb-[47px] md:mb-0">
-            <h4 className="md:text-lg text-base font-bold mb-5 md:mb-[31px] md:h-[25px]">More</h4>
-            <ul className='text-sm lg:text-base'>
-              <li className="mb-[15px] md:mb-6"><p className="text-gray-600 hover:text-gray-900">Documentation</p></li>
-              <li className="mb-[15px] md:mb-6"><p className="text-gray-600 hover:text-gray-900">License</p></li>
-              <li><p className="text-gray-600 hover:text-gray-900">Changelog</p></li>
-            </ul>
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 xl:gap-[30px] md:gap-4 gap-y-[39px] justify-around pl-6 md:pl-0 mb-[47px] md:mb-0">
+          {Object.entries(footerData).map(([sectionName, items]) => (
+            <div className='lg:w-[165px]' key={sectionName}>
+              <h4 className="md:text-lg text-base font-bold mb-5 md:mb-[31px] md:h-[25px]">{sectionName}</h4>
+              <ul className='flex flex-col gap-[15px] md:gap-6 text-sm lg:text-base'>
+                {items.map((item, index) => (
+                  <li key={index}>
+                    <p className="text-gray-600 hover:text-gray-900">{item}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
       <div className="md:grid md:justify-center md:text-center md:mt-24 gap-6 hidden">
@@ -66,4 +43,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

@@ -1,5 +1,5 @@
 import BookDetails from "../components/bookDetails/BookDetails"
-import { useBookDetails } from "../components/bookDetails/useBookDetails"
+import { useBookDetails } from "../hooks/useBookDetails"
 import RelatedBooks from "../components/relatedBooks/RelatedBooks"
 
 export default function BookDetail() {

@@ -12,12 +12,12 @@ const SearchResult = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 lg:gap-8 md:gap-4 gap-10">
         {visibleBooks.map((book) => (
           <SearchResultCard
-            key={book.id}
-            id={book.id}
-            title={book.volumeInfo?.title}
-            category={book.volumeInfo.categories?.join(', ')}
-            price={book.saleInfo?.saleability}
-            image={book?.volumeInfo?.imageLinks?.thumbnail ? book?.volumeInfo.imageLinks?.thumbnail : Book}
+            key={book?.id}
+            id={book?.id}
+            title={book?.volumeInfo?.title}
+            category={book?.volumeInfo?.categories?.join(', ')}
+            price={book?.saleInfo?.saleability}
+            image={book?.volumeInfo?.imageLinks?.thumbnail ? book?.volumeInfo?.imageLinks?.thumbnail : Book}
           />
         ))}
       </div>
