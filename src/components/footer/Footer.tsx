@@ -1,18 +1,19 @@
 import Logo from '../../assets/logo.svg';
 import Heart from '../../assets/heart.svg';
 import { footerData } from '../../constants/footerData';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
     <footer className="lg:mx-[10.417%] md:mx-[6%] md:pb-20 md:-mt-5 md:pt-32 pt-12 pb-16">
       <div className='flex md:flex-row flex-col-reverse lg:gap-[30px]'>
         <div className='lg:w-[263px] md:w-52 gap-y-4 md:gap-y-7 flex md:flex-none flex-col justify-center md:justify-start md:items-start items-center pl-6 md:pl-0 pr-[33px] md:pr-0'>
-          <a href="/"><img className='h-6 md:h-auto w-auto' src={Logo} alt='logo' /></a>
+          <Link to="/"><img className='h-6 md:h-auto w-auto' src={Logo} alt='logo' /></Link>
           <p className='text-center text-sm md:text-base md:text-left text-gray-500 px-1 md:mr-8 pt-1 pb-2.5'>Build a modern and creative website with crealand</p>
           {
             <div className="flex space-x-4 md:space-x-1.5">
-              {Object.entries(footerData).map(name=>
-                <div className="bg-red-500 h-10 w-10 rounded-full"></div>
+              {Object.entries(footerData).map((name,i)=>
+                <div key={i} className="bg-red-500 h-10 w-10 rounded-full"></div>
               )}
             </div>
           }

@@ -79,10 +79,12 @@ export interface Book {
     searchInfo: SearchInfo;
 }
 
-export type RelatedBooksType = {
+export type RelatedBooksPropsType = {
     relatedBooks: Book[]
     prevBooksHandler: any
     nextBooksHandler: any
     currentIndex: number
     length: number
+    showLoader: boolean
+    handlePrevNextClick: (fn:()=> void) => void
 }

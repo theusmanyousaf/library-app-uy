@@ -1,26 +1,11 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Book from '../../assets/book.png';
 import { PiArrowCircleRightLight, PiArrowCircleLeftLight } from 'react-icons/pi';
 import { ThreeDots } from 'react-loader-spinner';
-import { RelatedBooksType } from '../../types/bookTypes';
+import { RelatedBooksPropsType } from '../../types/bookTypes';
 
-const RelatedBooks = ({ relatedBooks, prevBooksHandler, nextBooksHandler, currentIndex, length }: RelatedBooksType) => {
-    const [showLoader, setShowLoader] = useState(false);
-
-    const startLoading = () => {
-        setShowLoader(true);
-        // Ensure loader is shown for at least 100ms
-        setTimeout(() => {
-            setShowLoader(false);
-        }, 300);
-    };
-
-    const handlePrevNextClick = (handler: () => void) => {
-        startLoading(); // Show loader when navigating
-        handler(); // Call the navigation handler
-    };
-
+const RelatedBooks = ({ relatedBooks, prevBooksHandler, nextBooksHandler, currentIndex, length, showLoader, handlePrevNextClick }: RelatedBooksPropsType) => {
+    
     return (
         <div className="bg-[#183B56] py-12 md:pt-14 md:pb-20 md:mb-16 mb-7 w-full overflow-clip">
             <div className="flex md:justify-between justify-center md:mb-0 mb-10 md:mx-[10.417%]">
